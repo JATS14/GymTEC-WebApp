@@ -5,12 +5,12 @@ import { NgForm } from '@angular/forms';
 
 
 @Component({
-    selector: 'app-gestionarProductos',
-    templateUrl: './gestionarProductos.component.html',
-    styleUrls: ['./gestionarProductos.component.css']
+    selector: 'app-gestionarSucursal',
+    templateUrl: './gestionarSucursal.component.html',
+    styleUrls: ['./gestionarSucursal.component.css']
   })
 
-  export class GestionarProductos{
+  export class GestionarSucursal{
     constructor(
         private router: Router, public json: JsonService) {
 
