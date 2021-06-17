@@ -70,6 +70,14 @@ export class JsonService{
      urlEliminarInventario = '';
      urlEditarInventario = '';
 
+      /* GESTION Empleado*/ 
+      urlObtnerEmpleado = '';
+      urlAgregarEmpleado = '';
+      urlBuscarEmpleado= '';
+      urlEliminarEmpleado = '';
+      urlEditarEmpleado = '';
+
+
     httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
@@ -230,5 +238,22 @@ export class JsonService{
     }
     postJsonInventarioEditar( obj: any){
       return this.http.post(this.urlEditarInventario, obj, this.httpOptions);
+    }
+
+     /* GESTION Empleado*/ 
+     getJsonEmpleado(){
+      return this.http.get(this.urlObtnerEmpleado);
+    }
+    postJsonEmpleadoAgregar( obj: any){
+      return this.http.post(this.urlAgregarEmpleado, obj, this.httpOptions);
+    }
+    postJsonEmpleadoBuscar( obj: any){
+      return this.http.post(this.urlBuscarEmpleado, obj, this.httpOptions);
+    }
+    postJsonEmpleadoEliminar( obj: any){
+      return this.http.post(this.urlEliminarEmpleado, obj, this.httpOptions);
+    }
+    postJsonEmpleadoEditar( obj: any){
+      return this.http.post(this.urlEditarEmpleado, obj, this.httpOptions);
     }
 }

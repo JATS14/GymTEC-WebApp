@@ -41,9 +41,9 @@
             Gestionar Empleados</a>
 
             <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Buscar</button>
+            (click)="frame2.show()" mdbWavesEffect>Buscar</button>
             <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-                mdbWavesEffect>Agregar</button>
+            (click)="frame1.show()"  mdbWavesEffect>Agregar</button>
 
         <a href="GeneracionPlanilla">
             <mdb-icon fas icon="hand-holding-usd" class="prefix black-text"></mdb-icon>
@@ -58,3 +58,262 @@
             Cerrar Sesión</a>
     </div>
   </div>
+
+  <div mdbModal #frame1="mdbModal" class="modal fade top" id="agregarEmpleadoModal" tabindex="-1" role="dialog"
+  aria-labelledby="agregarEmpleadoLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m1">
+ <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Agregar Empleado</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame1.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+       <div class="modal-body mx-3">
+         <form #AgrgarEmpleado = "ngForm" (ngSubmit)="goTo(AgrgarEmpleado)">
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
+           <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
+                  mdbInput required="" ngModel>
+           <label for="InputNombre" class="white-text">Nombre</label>
+         </div>
+
+         <div class="md-form mb-5">
+            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+            <input type="text" name="numeroCedula" id="InputNumeroCedula" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputNumeroCedula" class="white-text">Número de Cédula</label>
+          </div>
+          
+         <div class="md-form mb-5">
+            <mdb-icon fas icon="directions" class="prefix white-text"></mdb-icon>
+            <input type="text" name="direccion" id="InputDireccion" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputDireccion" class="white-text">Direción</label>
+          </div>
+ 
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="briefcase" class="prefix white-text"></mdb-icon>
+            <input type="text" name="puesto" id="InputPuesto" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputPuesto" class="white-text">Puesto</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="map-marker-alt" class="prefix white-text"></mdb-icon>
+            <input type="text" name="sucursal" id="InputSucursal" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputSucursal" class="white-text">Sucursal</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user-tie" class="prefix white-text"></mdb-icon>
+            <input type="text" name="tipoPlanilla" id="InputTipoPlanilla" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputTipoPlanilla" class="white-text">Tipo Planilla</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="at" class="prefix white-text"></mdb-icon>
+            <input type="text" name="correo" id="InputCorreo" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputCorreo" class="white-text">Correo</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="key" class="prefix white-text"></mdb-icon>
+            <input type="text" name="contrasena" id="InputContrasena" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputContrasena" class="white-text">Contraseña</label>
+          </div>
+         
+         <div class="row" class = "button">
+           <button type="submit" class="btn elegant" >Enviar</button>
+           </div>
+
+         </form>
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frame2="mdbModal" class="modal fade top" id="buscarEmpleadoModal" tabindex="-1" role="dialog"
+aria-labelledby="buscarEmpleadoLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="m1">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Buscar Empleado</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame2.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+     <div class="modal-body mx-3">
+       <form #BuscarEmpleado = "ngForm" (ngSubmit)="goToBuscar(BuscarEmpleado)">
+
+       <div class="md-form mb-5">
+         <mdb-icon fas icon="search" class="prefix white-text"></mdb-icon>
+         <input type="text" name="busquedaEnt" id="InputBusquedaEnt" class="form-control white-text"
+             required="" ngModel mdbInput>
+         <label for="InputBusquedaEnt" class="white-text">Buscar</label>
+       </div>
+     
+       <div class="row" class = "button">
+         <button type="submit" class="btn elegant" (click)="frame3.show()" >Buscar</button>
+         </div>
+
+       </form>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+
+<div mdbModal #frame3="mdbModal" class="modal fade top" id="EmpleadoBuscadoModal" tabindex="-1" role="dialog"
+aria-labelledby="EmpleadoBuscadoModal" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="m1">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Empleados Encontrados</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame3.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div *ngFor="let item of res4; let i = index" >
+   <div class="container">
+     <div class="col align-self-start">
+           
+           <p> {{item.nombre}}</p>
+           <p> Número de Cédula: {{item.numeroCedula}}</p>
+           <p>Direccion: {{item.direccion}}</p>
+           <p>Puesto: {{item.puesto}}</p>
+           <p>Sucursal: {{item.sucursal}}</p>
+           <p>Tipod ePlanilla: {{item.tipoPlanilla}}</p>
+           <p>Correo: {{item.correo}}</p>
+           <p> --------------------------</p>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+
+<div class="d-flex flex-nowrap"></div>
+<div *ngFor="let item of res1; let i = index" >
+    <div class="modal.show() container" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+            <h5 class="modal-title">{{item.nombre}}</h5>
+          </div>
+          <div class="modal-body">
+            <p> Número de Cédula: {{item.numeroCedula}}</p>
+            <p>Direccion: {{item.direccion}}</p>
+            <p>Puesto: {{item.puesto}}</p>
+            <p>Sucursal: {{item.sucursal}}</p>
+            <p>Tipod ePlanilla: {{item.tipoPlanilla}}</p>
+            <p>Correo: {{item.correo}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn elegant" (click) = "enviarAEditar(item)" >Editar </button>
+            <button type="button" class="btn btn-danger" (click) = "Eliminar_Empleado(item)"  >Eliminar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div mdbModal #frameEditar="mdbModal" class="modal fade top" id="EditarEmpleadoModal" tabindex="-1" role="dialog"
+  aria-labelledby="EditarEmpleadoLabel" aria-hidden="true" [ngStyle]="{'display': frameEditarAbrir ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Editar Empleado</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="editarEmpleadoClose(false)">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+       <div class="modal-body mx-3">
+
+         <div *ngFor="let item of EmpleadoEditando; let i = index" >
+
+         <form #EditarEmpleadoEditado = "ngForm" (ngSubmit)="goToEditar(EditarEmpleadoEditado)">
+
+             <div class="md-form mb-5">
+           <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
+           <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.nombre}}">
+           <label for="InputNombre" class="white-text">Nombre</label>
+         </div>
+
+         <div class="md-form mb-5">
+            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+            <input type="text" name="numeroCedula" id="InputNumeroCedula" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.numeroCedula}}">
+            <label for="InputNumeroCedula" class="white-text">Número de Cédula</label>
+          </div>
+          
+         <div class="md-form mb-5">
+            <mdb-icon fas icon="directions" class="prefix white-text"></mdb-icon>
+            <input type="text" name="direccion" id="InputDireccion" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.direccion}}">
+            <label for="InputDireccion" class="white-text">Direción</label>
+          </div>
+ 
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="briefcase" class="prefix white-text"></mdb-icon>
+            <input type="text" name="puesto" id="InputPuesto" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.puesto}}">
+            <label for="InputPuesto" class="white-text">Puesto</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="map-marker-alt" class="prefix white-text"></mdb-icon>
+            <input type="text" name="sucursal" id="InputSucursal" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.sucursal}}">
+            <label for="InputSucursal" class="white-text">Sucursal</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user-tie" class="prefix white-text"></mdb-icon>
+            <input type="text" name="tipoPlanilla" id="InputTipoPlanilla" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.tipoPlanilla}}">
+            <label for="InputTipoPlanilla" class="white-text">Tipo Planilla</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="at" class="prefix white-text"></mdb-icon>
+            <input type="text" name="correo" id="InputCorreo" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.correo}}">
+            <label for="InputCorreo" class="white-text">Correo</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="key" class="prefix white-text"></mdb-icon>
+            <input type="text" name="contrasena" id="InputContrasena" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.contrasena}}">
+            <label for="InputContrasena" class="white-text">Contraseña</label>
+          </div>
+         
+
+         <div class="row" class = "button">
+           <button type="submit" class="btn elegant" >Enviar Edición</button>
+           </div>
+         </form>
+       </div>
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+
