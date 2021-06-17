@@ -12,6 +12,7 @@ import { Verclases } from './VistaUsuario/VerClases/verclases.component';
 
 import { VistaAdministrador } from './VistaAdministrador/vistaAdministrador.component';
 import { ConfigurarGym } from './VistaAdministrador/ConfigurarGym/configurarGym.component';
+import { GeneracionPlanilla } from './VistaAdministrador/GeneracionPlanilla/generacionPlanilla.component';
 import { GestionarEmpleados } from './VistaAdministrador/GestionEmpleados/gestionarEmpleados.component';
 import { GestionarInventario } from './VistaAdministrador/GestionInventario/gestionarInventario.component';
 import { GestionarProductos } from './VistaAdministrador/GestionProductos/gestionarProductos.component';
@@ -34,6 +35,7 @@ export let routes: Routes = [
 
   {path: 'VistaAdministrador', component: VistaAdministrador},
   {path: 'ConfigurarGym', component: ConfigurarGym},
+  {path: 'GeneracionPlanilla', component: GeneracionPlanilla},
   {path: 'GestionarEmpleados', component: GestionarEmpleados},
   {path: 'GestionarInventario', component: GestionarInventario},
   {path: 'GestionarProductos', component: GestionarProductos},

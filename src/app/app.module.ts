@@ -16,6 +16,7 @@ import { Verclases } from './VistaUsuario/VerClases/verclases.component';
 
 import { VistaAdministrador } from './VistaAdministrador/vistaAdministrador.component';
 import { ConfigurarGym } from './VistaAdministrador/ConfigurarGym/configurarGym.component';
+import { GeneracionPlanilla } from './VistaAdministrador/GeneracionPlanilla/generacionPlanilla.component';
 import { GestionarEmpleados } from './VistaAdministrador/GestionEmpleados/gestionarEmpleados.component';
 import { GestionarInventario } from './VistaAdministrador/GestionInventario/gestionarInventario.component';
 import { GestionarProductos } from './VistaAdministrador/GestionProductos/gestionarProductos.component';
@@ -40,6 +41,7 @@ import { GestionarTratamiento } from './VistaAdministrador/GestionTratamientoSpa
 
     VistaAdministrador,
     ConfigurarGym,
+    GeneracionPlanilla,
     GestionarEmpleados,
     GestionarInventario,
     GestionarProductos,
