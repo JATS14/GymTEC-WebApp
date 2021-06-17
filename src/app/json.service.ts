@@ -10,10 +10,16 @@ export class JsonService{
 
     urlLogin = '';
     urlRegistro = '';
+
     urlUsuarioActualGET= '';
     urlUsuarioActualSET= '';
 
-
+    /* GESTION TRATAMIENTO SPA*/ 
+    urlObtnerSpas = '';
+    urlAgregarSpa = '';
+    urlBuscarSpa = '';
+    urlEliminarSpa = '';
+    urlEditarSpa = '';
 
 
     httpOptions = {
@@ -40,6 +46,24 @@ export class JsonService{
     postJsonUsuarioActual( obj: any){
       return this.http.post(this.urlUsuarioActualSET, obj, this.httpOptions);
     }
-  
+
+
+     /* GESTION TRATAMIENTO SPA*/ 
+     getJsonSpa(){
+      return this.http.get(this.urlObtnerSpas);
+    }
+     postJsonSpaAgregar( obj: any){
+      return this.http.post(this.urlAgregarSpa, obj, this.httpOptions);
+    }
+    postJsonSpaBuscar( obj: any){
+      return this.http.post(this.urlBuscarSpa, obj, this.httpOptions);
+    }
+    postJsonSpaEliminar( obj: any){
+      return this.http.post(this.urlEliminarSpa, obj, this.httpOptions);
+    }
+    postJsonSpaEditar( obj: any){
+      return this.http.post(this.urlEditarSpa, obj, this.httpOptions);
+    }
+
 
 }
