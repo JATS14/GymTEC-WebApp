@@ -8,7 +8,13 @@ import { HttpHeaders } from '@angular/common/http';
 
 export class JsonService{
 
-    url1 = '';
+    urlLogin = '';
+    urlRegistro = '';
+    urlUsuarioActualGET= '';
+    urlUsuarioActualSET= '';
+
+
+
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -19,13 +25,21 @@ export class JsonService{
       
       constructor(private http: HttpClient) { }
 
-      getJsonEjemplo(){
-        return this.http.get(this.url1);
-      }
-
-      postJsonEjemplo( obj: any){
-        return this.http.post(this.url1, obj, this.httpOptions);
-      }
-
+      /*Login - register*/
+  postJson( obj: any){
+    return this.http.post(this.urlLogin, obj, this.httpOptions);
+  }
+  postJsonRegister( obj: any){
+    return this.http.post(this.urlRegistro, obj, this.httpOptions);
+  }
+     /*UsuarioActual*/ 
+     getJsonUsuarioActual(){
+      return this.http.get(this.urlUsuarioActualGET);
+    }
+  
+    postJsonUsuarioActual( obj: any){
+      return this.http.post(this.urlUsuarioActualSET, obj, this.httpOptions);
+    }
+  
 
 }

@@ -1,0 +1,41 @@
+.container{
+    top: 50;
+    left: 50px;
+    width: 520px;
+    background:  url("https://i.pinimg.com/originals/2e/08/61/2e08617f3f0e57bc5b0343e37b56d7bc.jpg")no-repeat center center;
+    border: rgb(0, 0, 0);
+    color: white; 
+    border-radius: 40px;
+    border-style: solid;
+    padding: 20px;
+    margin-top:180px;
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .email_From{
+    background-color: aliceblue;
+    width: 600px;
+    padding: 5px;
+    margin: 5px;
+  }
+  .password_Email{
+    background-color: aliceblue;
+    width: 600px;
+    padding: 5px;
+    margin: 5px;
+  }
+  .button{
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  .buttonRegister{
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+  .col-6{
+    margin: 0 auto;
+  }  

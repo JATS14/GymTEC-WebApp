@@ -11,11 +11,49 @@ import { NgForm } from '@angular/forms';
 
 export class PrincipalComponent implements OnInit {
 
+  res1: Array<any> = [];
+
     constructor(
         private router: Router, public json: JsonService
       ) {
       }
       ngOnInit(): void {
       }
+      goTo(formLogin: NgForm) {
+        if (formLogin.valid) {
+          /*
+          this.json.postJson(formLogin.value).subscribe((res: any) => {
+            console.log(res);
+            this.res1 = res;
+            if (res.status == "denegar"){
+              alert('El usuario no existe o la contraseña es incorrecta');
+            }
+            if (res.status  == "admin"){
+              this.router.navigate([ '/VistaAdministrador' ])
+            }
+            if (res.status  == "usuario"){
+              this.json.postJsonUsuarioActual(formLogin.value).subscribe((res: any) => {
+                console.log(res);
+                });
+    
+              this.router.navigate([ '/VistaUsuario' ])
+            }
+          });
+          
+          */
+          if (formLogin.value.Correo=="admin"){
+            this.router.navigate([ '/VistaAdministrador' ])
+          }
+          if (formLogin.value.Correo=="usuario"){
+            this.router.navigate([ '/VistaUsuario' ])
+          }
 
+        }
+        else{
+          alert('Error en el ingreso de datos');
+        }
+      }
+      Registrar(): void{
+        this.router.navigate([ '/Registro' ])
+      }
 }

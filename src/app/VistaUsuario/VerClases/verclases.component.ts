@@ -11,6 +11,8 @@ import { NgForm } from '@angular/forms';
   })
 
   export class Verclases{
+    res1: Array<any> = [{"nombre": "prueba1"},{"nombre": "prueba1"},
+                        {"nombre": "prueba1"},{"nombre": "prueba1"}];
     constructor(
         private router: Router, public json: JsonService) {
 

@@ -1,35 +1,21 @@
-<!--
-<header class="h-100">
-    <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
-        <mdb-navbar-brand>
-            <a class="logo navbar-brand" href="#"><strong>Salir</strong></a>
-        </mdb-navbar-brand>
-        <links>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item waves-light" mdbWavesEffect>
-                    <a class="nav-link" href="principalVistaAdmin">Dashboard <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active waves-light" mdbWavesEffect>
-                    <a class="nav-link"  >Gestionar Dispositivos</a>
-                </li>
-                <li class="nav-item waves-light" mdbWavesEffect>
-                    <a class="nav-link" href="GestionarTipo" >Gestionar Tipo Dispositivos</a>
-                </li>
-                <li class="nav-item waves-light" mdbWavesEffect>
-                    <a class="nav-link"   href= "GestionarDistribuidores" >Gestionar Distribuidores</a>
-                </li>
-                <li class="nav-item waves-light" mdbWavesEffect>
-                    <a class="nav-link" href= "GestionarTienda"  >Gestionar Tienda en Línea</a>
-                </li>
-                
-            </ul>
-            <button type="button" mdbBtn color="default" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-            (click)="frame1.show()" mdbWavesEffect>Agregar Dispositivos</button>
-            <button type="button" mdbBtn color="default" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-            (click)="frame2.show()" mdbWavesEffect>Buscar Dispositivo</button>
-        </links>
-        
-    </mdb-navbar>
-</header>
 
--->
+<div class="sidebar">
+    <div class="d-flex flex-column">
+        <a href="VistaUsuario">
+            <mdb-icon fas icon="home" class="prefix black-text"></mdb-icon>
+            Página Principal</a>
+
+        <a class="active"  >
+            <mdb-icon fas icon="calendar" class="prefix white-text"></mdb-icon>
+            Clases</a>
+
+            <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
+                mdbWavesEffect>Buscar Clases</button>
+            <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
+                mdbWavesEffect>Registrarse</button>
+
+        <a class="exit" href="#" >
+            <mdb-icon fas icon="sign-out-alt" class="prefix black-text"></mdb-icon>
+            Cerrar Sesión</a>
+    </div>
+  </div>

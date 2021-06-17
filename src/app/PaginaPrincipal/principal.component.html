@@ -1,0 +1,35 @@
+<div class="col-6">
+    <div class="container">
+      <div class="col align-self-start">
+        <form #formLogin = "ngForm" (ngSubmit)="goTo(formLogin)">
+          <div class= "row">
+            <label >
+              Correo Electronico:
+            </label>
+            <input type="email" name="Correo" class="email_From" id="InputEmail1" aria-describedby="emailHelp" ngModel 
+                   required="" #correo="ngModel">
+          </div>
+          <div class="row">
+            <label>Contraseña:</label>
+            <input type="password" name="contrasena" class="password_Email" id="InputPassword1" required="" ngModel>
+          </div>
+          <div class="row" class = "button">
+            <button mdbBtn type="submit" color="elegant" mdbWavesEffect >Entrar</button>
+            </div>
+            
+            <div class="row" class = "button">
+              <button mdbBtn type="button" color="blue-grey" mdbWavesEffect (click) = "Registrar()" >Registrarse</button>
+              </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <footer class="bg-light text-center text-lg-start fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0);">
+      © 2021 Creado por Stephanie Álvarez y Adrián Trejos 
+    </div>
+  </footer>
