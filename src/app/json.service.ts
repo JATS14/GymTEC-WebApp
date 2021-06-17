@@ -28,6 +28,13 @@ export class JsonService{
     urlEliminarTipoPlanilla = '';
     urlEditarTipoPlanilla = '';
 
+    /* GESTION Tipo Equipo*/ 
+    urlObtnerTipoEquipo = '';
+    urlAgregarTipoEquipo = '';
+    urlBuscarTipoEquipo = '';
+    urlEliminarTipoEquipo = '';
+    urlEditarTipoEquipo = '';
+
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -88,5 +95,23 @@ export class JsonService{
     postJsonTipoPlanillaEditar( obj: any){
       return this.http.post(this.urlEditarTipoPlanilla, obj, this.httpOptions);
     }
+
+    /* GESTION Tipo Equipo*/ 
+    getJsonTipoEquipo(){
+      return this.http.get(this.urlObtnerTipoEquipo);
+    }
+     postJsonTipoEquipoAgregar( obj: any){
+      return this.http.post(this.urlAgregarTipoEquipo, obj, this.httpOptions);
+    }
+    postJsonTipoEquipoBuscar( obj: any){
+      return this.http.post(this.urlBuscarTipoEquipo, obj, this.httpOptions);
+    }
+    postJsonTipoEquipoEliminar( obj: any){
+      return this.http.post(this.urlEliminarTipoEquipo, obj, this.httpOptions);
+    }
+    postJsonTipoEquipoEditar( obj: any){
+      return this.http.post(this.urlEditarTipoEquipo, obj, this.httpOptions);
+    }
+
 
 }
