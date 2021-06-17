@@ -21,6 +21,13 @@ export class JsonService{
     urlEliminarSpa = '';
     urlEditarSpa = '';
 
+    /* GESTION Tipo Planilla*/ 
+    urlObtnerTipoPlanilla = '';
+    urlAgregarTipoPlanilla = '';
+    urlBuscarTipoPlanilla = '';
+    urlEliminarTipoPlanilla = '';
+    urlEditarTipoPlanilla = '';
+
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -65,5 +72,21 @@ export class JsonService{
       return this.http.post(this.urlEditarSpa, obj, this.httpOptions);
     }
 
+         /* GESTION Tipo Planilla*/ 
+     getJsonTipoPlanilla(){
+      return this.http.get(this.urlObtnerTipoPlanilla);
+    }
+     postJsonTipoPlanillaAgregar( obj: any){
+      return this.http.post(this.urlAgregarTipoPlanilla, obj, this.httpOptions);
+    }
+    postJsonTipoPlanillaBuscar( obj: any){
+      return this.http.post(this.urlBuscarTipoPlanilla, obj, this.httpOptions);
+    }
+    postJsonTipoPlanillaEliminar( obj: any){
+      return this.http.post(this.urlEliminarTipoPlanilla, obj, this.httpOptions);
+    }
+    postJsonTipoPlanillaEditar( obj: any){
+      return this.http.post(this.urlEditarTipoPlanilla, obj, this.httpOptions);
+    }
 
 }
