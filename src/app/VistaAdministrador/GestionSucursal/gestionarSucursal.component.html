@@ -21,9 +21,9 @@
             Gestionar Sucursal</a>
 
             <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Buscar</button>
+            (click)="frame2.show()" mdbWavesEffect>Buscar</button>
             <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-                mdbWavesEffect>Agregar</button>
+            (click)="frame1.show()" mdbWavesEffect>Agregar</button>
     
         <a href="GestionarServicios">
             <mdb-icon fas icon="tools" class="prefix black-text"></mdb-icon>
@@ -58,3 +58,255 @@
             Cerrar Sesión</a>
     </div>
   </div>
+
+  <div mdbModal #frame1="mdbModal" class="modal fade top" id="agregarSucursalModal" tabindex="-1" role="dialog"
+  aria-labelledby="agregarSucursalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m1">
+ <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Agregar Sucursal</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame1.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+       <div class="modal-body mx-3">
+         <form #AgrgarSucursal = "ngForm" (ngSubmit)="goTo(AgrgarSucursal)">
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="signature" class="prefix white-text"></mdb-icon>
+           <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
+                  mdbInput required="" ngModel>
+           <label for="InputNombre" class="white-text">Nombre</label>
+         </div>
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="directions" class="prefix white-text"></mdb-icon>
+           <input type="text" name="direccion" id="InputDireccion" class="form-control white-text"
+                  mdbInput required="" ngModel>
+           <label for="InputDireccion" class="white-text">Direción</label>
+         </div>
+
+         <div class="md-form mb-5">
+            <mdb-icon fas icon="calendar-alt" class="prefix white-text"></mdb-icon>
+            <input type="text" name="fechaApertura" id="InputFechaApertura" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputFechaApertura" class="white-text">Fecha Apertura</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
+            <input type="text" name="horaAtencion" id="InputHoraAtencion" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputHoraAtencion" class="white-text">Hora Atención</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="money-bill-alt" class="prefix white-text"></mdb-icon>
+            <input type="text" name="administrador" id="InputAdministrador" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputAdministrador" class="white-text">Administrador</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="user-tie" class="prefix white-text"></mdb-icon>
+            <input type="text" name="administrador" id="InputAdministrador" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputAdministrador" class="white-text">Administrador</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="users" class="prefix white-text"></mdb-icon>
+            <input type="text" name="capacidadMaxima" id="InputCapacidadMaxima" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputCapacidadMaxima" class="white-text">Capacidad Máxima</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="phone" class="prefix white-text"></mdb-icon>
+            <input type="text" name="telefono" id="InputTelefono" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="Telefono" class="white-text">Teléfono</label>
+          </div>
+         
+         <div class="row" class = "button">
+           <button type="submit" class="btn elegant" >Enviar</button>
+           </div>
+
+         </form>
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frame2="mdbModal" class="modal fade top" id="buscarSucursalModal" tabindex="-1" role="dialog"
+aria-labelledby="buscarSucursalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="m1">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Buscar Sucursal</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame2.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+     <div class="modal-body mx-3">
+       <form #BuscarSucursal = "ngForm" (ngSubmit)="goToBuscar(BuscarSucursal)">
+
+       <div class="md-form mb-5">
+         <mdb-icon fas icon="search" class="prefix white-text"></mdb-icon>
+         <input type="text" name="busquedaEnt" id="InputBusquedaEnt" class="form-control white-text"
+             required="" ngModel mdbInput>
+         <label for="InputBusquedaEnt" class="white-text">Buscar</label>
+       </div>
+     
+       <div class="row" class = "button">
+         <button type="submit" class="btn elegant" (click)="frame3.show()" >Buscar</button>
+         </div>
+
+       </form>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+
+<div mdbModal #frame3="mdbModal" class="modal fade top" id="SucursalBuscadoModal" tabindex="-1" role="dialog"
+aria-labelledby="SucursalBuscadoModal" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="m1">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Sucursales Encontrados</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame3.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div *ngFor="let item of res4; let i = index" >
+   <div class="container">
+     <div class="col align-self-start">
+           
+           <p> {{item.nombre}}</p>
+           <p> Direccion: {{item.direccion}}</p>
+           <p>Fecha Apertura: {{item.fechaApertura}}</p>
+           <p>Hora Atención: {{item.horaAtencion}}</p>
+           <p>Administrador: {{item.administrador}}</p>
+           <p>Capacidad Máxima: {{item.capacidadMaxima}}</p>
+           <p>Teléfono: {{item.telefono}}</p>
+           <p> --------------------------</p>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+
+<div class="d-flex flex-nowrap"></div>
+<div *ngFor="let item of res1; let i = index" >
+    <div class="modal.show() container" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+            <h5 class="modal-title">{{item.nombre}}</h5>
+          </div>
+          <div class="modal-body">
+        <p> Direccion: {{item.direccion}}</p>
+           <p>Fecha Apertura: {{item.fechaApertura}}</p>
+           <p>Hora Atención: {{item.horaAtencion}}</p>
+           <p>Administrador: {{item.administrador}}</p>
+           <p>Capacidad Máxima: {{item.capacidadMaxima}}</p>
+           <p>Teléfono: {{item.telefono}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn elegant" (click) = "enviarAEditar(item)" >Editar </button>
+            <button type="button" class="btn btn-danger" (click) = "Eliminar_Sucursal(item)"  >Eliminar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div mdbModal #frameEditar="mdbModal" class="modal fade top" id="EditarSucursalModal" tabindex="-1" role="dialog"
+  aria-labelledby="EditarSucursalLabel" aria-hidden="true" [ngStyle]="{'display': frameEditarAbrir ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Editar Sucursal</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="editarSucursalClose(false)">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+       <div class="modal-body mx-3">
+
+         <div *ngFor="let item of SucursalEditando; let i = index" >
+
+         <form #EditarSucursalEditado = "ngForm" (ngSubmit)="goToEditar(EditarSucursalEditado)">
+
+            <div class="md-form mb-5">
+            <mdb-icon fas icon="signature" class="prefix white-text"></mdb-icon>
+            <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.nombre}}">
+            <label for="InputNombre" class="white-text">Nombre</label>
+          </div>
+ 
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="directions" class="prefix white-text"></mdb-icon>
+            <input type="text" name="direccion" id="InputDireccion" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.direccion}}">
+            <label for="InputDireccion" class="white-text">Direción</label>
+          </div>
+ 
+          <div class="md-form mb-5">
+             <mdb-icon fas icon="calendar-alt" class="prefix white-text"></mdb-icon>
+             <input type="text" name="fechaApertura" id="InputFechaApertura" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.fechaApertura}}">
+             <label for="InputFechaApertura" class="white-text">Fecha Apertura</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
+             <input type="text" name="horaAtencion" id="InputHoraAtencion" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.horaAtencion}}">
+             <label for="InputHoraAtencion" class="white-text">Hora Atención</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="user-tie" class="prefix white-text"></mdb-icon>
+             <input type="text" name="administrador" id="InputAdministrador" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.administrador}}">
+             <label for="InputAdministrador" class="white-text">Administrador</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="users" class="prefix white-text"></mdb-icon>
+             <input type="text" name="capacidadMaxima" id="InputCapacidadMaxima" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.capacidadMaxima}}">
+             <label for="InputCapacidadMaxima" class="white-text">Capacidad Máxima</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="phone" class="prefix white-text"></mdb-icon>
+             <input type="text" name="telefono" id="InputTelefono" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.telefono}}">
+             <label for="Telefono" class="white-text">Teléfono</label>
+            </div>
+         
+
+         <div class="row" class = "button">
+           <button type="submit" class="btn elegant" >Enviar Edición</button>
+           </div>
+         </form>
+       </div>
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+
+
+

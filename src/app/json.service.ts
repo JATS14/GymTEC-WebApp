@@ -35,6 +35,13 @@ export class JsonService{
     urlEliminarTipoEquipo = '';
     urlEditarTipoEquipo = '';
 
+    /* GESTION Sucursal*/ 
+    urlObtnerSucursal = '';
+    urlAgregarSucursal = '';
+    urlBuscarSucursal = '';
+    urlEliminarSucursal= '';
+    urlEditarTSucursal = '';
+
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -98,7 +105,7 @@ export class JsonService{
 
     /* GESTION Tipo Equipo*/ 
     getJsonTipoEquipo(){
-      return this.http.get(this.urlObtnerTipoEquipo);
+      return this.http.get(this.urlObtnerSucursal);
     }
      postJsonTipoEquipoAgregar( obj: any){
       return this.http.post(this.urlAgregarTipoEquipo, obj, this.httpOptions);
@@ -111,6 +118,23 @@ export class JsonService{
     }
     postJsonTipoEquipoEditar( obj: any){
       return this.http.post(this.urlEditarTipoEquipo, obj, this.httpOptions);
+    }
+
+    /* GESTION Sucursal*/ 
+    getJsonSucursal(){
+      return this.http.get(this.urlObtnerTipoEquipo);
+    }
+    postJsonSucursalAgregar( obj: any){
+      return this.http.post(this.urlAgregarSucursal, obj, this.httpOptions);
+    }
+    postJsonSucursalBuscar( obj: any){
+      return this.http.post(this.urlBuscarSucursal, obj, this.httpOptions);
+    }
+    postJsonSucursalEliminar( obj: any){
+      return this.http.post(this.urlEliminarSucursal, obj, this.httpOptions);
+    }
+    postJsonSucursalEditar( obj: any){
+      return this.http.post(this.urlEditarTSucursal, obj, this.httpOptions);
     }
 
 
