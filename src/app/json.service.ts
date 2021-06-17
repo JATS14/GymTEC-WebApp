@@ -39,22 +39,29 @@ export class JsonService{
     urlObtnerSucursal = '';
     urlAgregarSucursal = '';
     urlBuscarSucursal = '';
-    urlEliminarSucursal= '';
+    urlEliminarSucursal = '';
     urlEditarTSucursal = '';
 
     /* GESTION Servicio*/ 
     urlObtnerServicio = '';
     urlAgregarServicio = '';
-    urlBuscarServicio= '';
+    urlBuscarServicio = '';
     urlEliminarServicio= '';
     urlEditarServicio = '';
 
     /* GESTION Puesto*/ 
     urlObtnerPuesto = '';
     urlAgregarPuesto = '';
-    urlBuscarPuesto= '';
+    urlBuscarPuesto = '';
     urlEliminarPuesto= '';
     urlEditarPuesto = '';
+
+    /* GESTION Producto*/ 
+    urlObtnerProducto = '';
+    urlAgregarProducto = '';
+    urlBuscarProducto = '';
+    urlEliminarProducto = '';
+    urlEditarProducto = '';
 
 
     httpOptions = {
@@ -185,6 +192,22 @@ export class JsonService{
       return this.http.post(this.urlEditarPuesto, obj, this.httpOptions);
     }
 
+    /* GESTION Producto*/ 
+    getJsonProducto(){
+      return this.http.get(this.urlObtnerProducto);
+    }
+    postJsonProductoAgregar( obj: any){
+      return this.http.post(this.urlAgregarProducto, obj, this.httpOptions);
+    }
+    postJsonProductoBuscar( obj: any){
+      return this.http.post(this.urlBuscarProducto, obj, this.httpOptions);
+    }
+    postJsonProductoEliminar( obj: any){
+      return this.http.post(this.urlEliminarProducto, obj, this.httpOptions);
+    }
+    postJsonProductoEditar( obj: any){
+      return this.http.post(this.urlEditarProducto, obj, this.httpOptions);
+    }
 
 
 }
