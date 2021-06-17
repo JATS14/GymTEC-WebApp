@@ -29,9 +29,9 @@
             Gestionar Puestos</a> 
 
             <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Buscar</button>
+            (click)="frame2.show()" mdbWavesEffect>Buscar</button>
             <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-                mdbWavesEffect>Agregar</button>
+            (click)="frame1.show()" mdbWavesEffect>Agregar</button>
 
         <a href="GestionarProductos">
             <mdb-icon fas icon="box-open" class="prefix black-text"></mdb-icon>
@@ -58,3 +58,165 @@
             Cerrar Sesión</a>
     </div>
   </div>
+
+  <div mdbModal #frame1="mdbModal" class="modal fade top" id="agregarPuestoModal" tabindex="-1" role="dialog"
+  aria-labelledby="agregarPuestoLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m1">
+ <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Agregar Puesto</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame1.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+       <div class="modal-body mx-3">
+         <form #AgrgarPuesto = "ngForm" (ngSubmit)="goTo(AgrgarPuesto)">
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+           <input type="text" name="identificador" id="InputIdentificador" class="form-control white-text"
+                  mdbInput required="" ngModel>
+           <label for="InputIdentificador" class="white-text">identificador</label>
+         </div>
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="align-justify" class="prefix white-text"></mdb-icon>
+           <input type="text" name="descripcion" id="InputDescripcion" class="form-control white-text"
+                  mdbInput required="" ngModel>
+           <label for="InputDescripcion" class="white-text">Descripción</label>
+         </div>
+         
+         <div class="row" class = "button">
+           <button type="submit" class="btn elegant" >Enviar</button>
+           </div>
+
+         </form>
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frame2="mdbModal" class="modal fade top" id="buscarPuestoModal" tabindex="-1" role="dialog"
+aria-labelledby="buscarPuestoLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="m1">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Buscar Puesto</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame2.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+     <div class="modal-body mx-3">
+       <form #BuscarPuesto = "ngForm" (ngSubmit)="goToBuscar(BuscarPuesto)">
+
+       <div class="md-form mb-5">
+         <mdb-icon fas icon="search" class="prefix white-text"></mdb-icon>
+         <input type="text" name="busquedaEnt" id="InputBusquedaEnt" class="form-control white-text"
+             required="" ngModel mdbInput>
+         <label for="InputBusquedaEnt" class="white-text">Buscar</label>
+       </div>
+     
+       <div class="row" class = "button">
+         <button type="submit" class="btn elegant" (click)="frame3.show()" >Buscar</button>
+         </div>
+
+       </form>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+
+<div mdbModal #frame3="mdbModal" class="modal fade top" id="PuestoBuscadoModal" tabindex="-1" role="dialog"
+aria-labelledby="PuestoBuscadoModal" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="m1">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Puestos Encontrados</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame3.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div *ngFor="let item of res4; let i = index" >
+   <div class="container">
+     <div class="col align-self-start">
+           
+           <p> {{item.identificador}}</p>
+           <p> Descripción: {{item.descripcion}}</p>
+           <p> --------------------------</p>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+
+<div class="d-flex flex-nowrap"></div>
+<div *ngFor="let item of res1; let i = index" >
+    <div class="modal.show() container" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+            <h5 class="modal-title">{{item.identificador}}</h5>
+          </div>
+          <div class="modal-body">
+            <p> Descripción: {{item.descripcion}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn elegant" (click) = "enviarAEditar(item)" >Editar </button>
+            <button type="button" class="btn btn-danger" (click) = "Eliminar_Puesto(item)"  >Eliminar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div mdbModal #frameEditar="mdbModal" class="modal fade top" id="EditarPuestoModal" tabindex="-1" role="dialog"
+  aria-labelledby="EditarPuestoLabel" aria-hidden="true" [ngStyle]="{'display': frameEditarAbrir ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Editar Puesto</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="editarPuestoClose(false)">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+       <div class="modal-body mx-3">
+
+         <div *ngFor="let item of PuestoEditando; let i = index" >
+
+         <form #EditarPuestoEditado = "ngForm" (ngSubmit)="goToEditar(EditarPuestoEditado)">
+
+            <div class="md-form mb-5">
+                <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+                <input type="text" name="identificador" id="InputIdentificador" class="form-control white-text"
+                       mdbInput required="" ngModel="{{item.identificador}}">
+                <label for="InputIdentificador" class="white-text">identificador</label>
+              </div>
+     
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="align-justify" class="prefix white-text"></mdb-icon>
+                <input type="text" name="descripcion" id="InputDescripcion" class="form-control white-text"
+                       mdbInput required="" ngModel="{{item.descripcion}}">
+                <label for="InputDescripcion" class="white-text">Descripción</label>
+              </div>
+
+         <div class="row" class = "button">
+           <button type="submit" class="btn elegant" >Enviar Edición</button>
+           </div>
+         </form>
+       </div>
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+

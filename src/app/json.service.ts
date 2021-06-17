@@ -49,6 +49,13 @@ export class JsonService{
     urlEliminarServicio= '';
     urlEditarServicio = '';
 
+    /* GESTION Puesto*/ 
+    urlObtnerPuesto = '';
+    urlAgregarPuesto = '';
+    urlBuscarPuesto= '';
+    urlEliminarPuesto= '';
+    urlEditarPuesto = '';
+
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -160,6 +167,24 @@ export class JsonService{
     postJsonServicioEditar( obj: any){
       return this.http.post(this.urlEditarServicio, obj, this.httpOptions);
     }
+
+    /* GESTION Puesto*/ 
+    getJsonPuesto(){
+      return this.http.get(this.urlObtnerPuesto);
+    }
+    postJsonPuestoAgregar( obj: any){
+      return this.http.post(this.urlAgregarPuesto, obj, this.httpOptions);
+    }
+    postJsonPuestoBuscar( obj: any){
+      return this.http.post(this.urlBuscarPuesto, obj, this.httpOptions);
+    }
+    postJsonPuestoEliminar( obj: any){
+      return this.http.post(this.urlEliminarPuesto, obj, this.httpOptions);
+    }
+    postJsonPuestoEditar( obj: any){
+      return this.http.post(this.urlEditarPuesto, obj, this.httpOptions);
+    }
+
 
 
 }
