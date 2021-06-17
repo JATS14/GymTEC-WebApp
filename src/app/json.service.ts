@@ -63,6 +63,12 @@ export class JsonService{
     urlEliminarProducto = '';
     urlEditarProducto = '';
 
+     /* GESTION Inventario*/ 
+     urlObtnerInventario = '';
+     urlAgregarInventario = '';
+     urlBuscarInventario = '';
+     urlEliminarInventario = '';
+     urlEditarInventario = '';
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -209,5 +215,20 @@ export class JsonService{
       return this.http.post(this.urlEditarProducto, obj, this.httpOptions);
     }
 
-
+    /* GESTION Inventario*/ 
+    getJsonInventario(){
+      return this.http.get(this.urlObtnerInventario);
+    }
+    postJsonInventarioAgregar( obj: any){
+      return this.http.post(this.urlAgregarInventario, obj, this.httpOptions);
+    }
+    postJsonInventarioBuscar( obj: any){
+      return this.http.post(this.urlBuscarInventario, obj, this.httpOptions);
+    }
+    postJsonInventarioEliminar( obj: any){
+      return this.http.post(this.urlEliminarInventario, obj, this.httpOptions);
+    }
+    postJsonInventarioEditar( obj: any){
+      return this.http.post(this.urlEditarInventario, obj, this.httpOptions);
+    }
 }
