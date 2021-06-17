@@ -42,6 +42,13 @@ export class JsonService{
     urlEliminarSucursal= '';
     urlEditarTSucursal = '';
 
+    /* GESTION Servicio*/ 
+    urlObtnerServicio = '';
+    urlAgregarServicio = '';
+    urlBuscarServicio= '';
+    urlEliminarServicio= '';
+    urlEditarServicio = '';
+
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -135,6 +142,23 @@ export class JsonService{
     }
     postJsonSucursalEditar( obj: any){
       return this.http.post(this.urlEditarTSucursal, obj, this.httpOptions);
+    }
+
+    /* GESTION Servicio*/ 
+    getJsonServicio(){
+      return this.http.get(this.urlObtnerServicio);
+    }
+    postJsonServicioAgregar( obj: any){
+      return this.http.post(this.urlAgregarServicio, obj, this.httpOptions);
+    }
+    postJsonServicioBuscar( obj: any){
+      return this.http.post(this.urlBuscarServicio, obj, this.httpOptions);
+    }
+    postJsonServicioEliminar( obj: any){
+      return this.http.post(this.urlEliminarServicio, obj, this.httpOptions);
+    }
+    postJsonServicioEditar( obj: any){
+      return this.http.post(this.urlEditarServicio, obj, this.httpOptions);
     }
 
 
