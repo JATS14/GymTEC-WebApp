@@ -106,6 +106,12 @@ export class JsonService{
       UrlAsociarServicio = '';
       UrlDesasociarServicio = '';
 
+       /* Vista Usuario */ 
+       
+       urlRegistrarseClase = '';
+       urlBuscarClaseUsuario = '';
+
+
     httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
@@ -359,5 +365,14 @@ export class JsonService{
     }
     postJsonDesasociarServicio( obj: any){
       return this.http.post(this.UrlDesasociarServicio, obj, this.httpOptions);
+    }
+
+     /* Vista Usuario */ 
+
+     postJsonRegistroClase( obj: any){
+      return this.http.post(this.urlRegistrarseClase, obj, this.httpOptions);
+    }
+    postJsonBuscarClaseUsuario( obj: any){
+      return this.http.post(this.urlBuscarClaseUsuario, obj, this.httpOptions);
     }
 }

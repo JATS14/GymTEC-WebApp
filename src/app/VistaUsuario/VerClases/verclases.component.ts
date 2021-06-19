@@ -11,12 +11,44 @@ import { NgForm } from '@angular/forms';
   })
 
   export class Verclases{
-    res1: Array<any> = [{"nombre": "prueba1"},{"nombre": "prueba1"},
-                        {"nombre": "prueba1"},{"nombre": "prueba1"}];
+    dummy:Array<any> = [];
+    res4:Array<any> = [];
+    ListaClases: Array<any> = [{"tipo":"Tipo1","instructor":"NombreInst","individual":1,"capacidad":50,
+                               "fecha":"06-18-2021","horaInicio":"18:52","horaFin":"19:50"}];
     constructor(
         private router: Router, public json: JsonService) {
-
+         /* this.json.getJsonClases().subscribe((res: any) => {
+            console.log(res);
+            this.ListaClases = res;
+          });
+          */
       }
 
+      Registrarse(object: any): void{
+        this.json.postJsonRegistroClase(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+            alert('Se Registró con exito');
+          }
+      });
+      
+      }
+
+      goToBuscar(BuscarClases: NgForm) {
+        if (BuscarClases.valid) {
+          this.json.postJsonBuscarClaseUsuario(BuscarClases.value).subscribe((res: any) => {
+            console.log(res);
+            this.res4 = res;
+            if (this.res4.length == 0){
+              alert('No se encontraron Clases'); }
+            }
+          );
+        }
+        else{
+          alert('Error en el ingreso de datos');
+        }
+      }
 
     }

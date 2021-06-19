@@ -10,12 +10,109 @@
             Clases</a>
 
             <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Buscar Clases</button>
-            <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-                mdbWavesEffect>Registrarse</button>
+            (click)="frame1.show()" mdbWavesEffect>Buscar Clases</button>
 
         <a class="exit" href="#" >
             <mdb-icon fas icon="sign-out-alt" class="prefix black-text"></mdb-icon>
             Cerrar Sesión</a>
     </div>
   </div>
+
+  <div mdbModal #frame1="mdbModal" class="modal fade top" id="buscarClasesModal" tabindex="-1" role="dialog"
+  aria-labelledby="buscarClasesLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+  <div class="m1">
+  <div class="modal-content">
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Buscar Clases</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame1.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+       <div class="modal-body mx-3">
+         <form #BuscarClases = "ngForm" (ngSubmit)="goToBuscar(BuscarClases)">
+  
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="search" class="prefix white-text"></mdb-icon>
+           <input type="text" name="busquedaEnt" id="InputBusquedaEnt" class="form-control white-text"
+               required="" ngModel mdbInput>
+           <label for="InputBusquedaEnt" class="white-text">Buscar</label>
+         </div>
+       
+         <div class="row" class = "button">
+           <button type="submit" class="btn elegant" (click)="frame2.show()" >Buscar</button>
+           </div>
+  
+         </form>
+       </div>
+   </div>
+  </div>
+  </div>
+  </div>
+
+  <div mdbModal #frame2="mdbModal" class="modal fade top" id="ClasesBuscadoModal" tabindex="-1" role="dialog"
+aria-labelledby="ClasesBuscadoModal" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="m1">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Clases Encontradas</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame2.hide()">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div *ngFor="let item of res4; let i = index" >
+   <div class="container">
+     <div class="col align-self-start">
+           
+           <p> {{item.nombre}}</p>
+           <p> Instructor: {{item.instructor}}</p>
+           <p> Individual: {{item.individual}}</p>
+           <p>--(0=Grupal, 1= individual)--</p>
+           <p>Capacidad Máxima: {{item.capacidad}}</p>
+           <p>Fecha: {{item.fecha}}</p>
+           <p>Hora Inicio: {{item.horaInicio}}</p>
+           <p>Hora Finalización: {{item.horaFin}}</p>
+           <button type="button" class="btn btn-success" (click) = "Registrarse(item)"  
+                >Registrarse </button>
+           <p> --------------------------</p>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+  <div class="d-flex flex-nowrap"></div>
+<div *ngFor="let item of ListaClases; let i = index" >
+    <div class="modal.show() container" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+            <h5 class="modal-title">{{item.tipo}}</h5>
+          </div>
+          <div class="modal-body">
+           <p> Instructor: {{item.instructor}}</p>
+           <p> Individual: {{item.individual}}</p>
+           <p>--(0=Grupal, 1= individual)--</p>
+           <p>Capacidad Máxima: {{item.capacidad}}</p>
+           <p>Fecha: {{item.fecha}}</p>
+           <p>Hora Inicio: {{item.horaInicio}}</p>
+           <p>Hora Finalización: {{item.horaFin}}</p>
+
+            <button type="button" class="btn btn-success" (click) = "Registrarse(item)"  
+                >Registrarse </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
