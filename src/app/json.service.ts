@@ -94,6 +94,17 @@ export class JsonService{
       UrlEliminarClases = '';
       UrlCopiarClases = '';
       UrlAgregarClases = '';
+      UrlAsociarSpa = '';
+      UrlDesasociarSpa = '';
+
+      UrlAsociarProducto = '';
+      UrlDesasociarProducto = '';
+
+      UrlAsociarInventario = '';
+      UrlDesasociarInventario = '';
+
+      UrlAsociarServicio = '';
+      UrlDesasociarServicio = '';
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -322,4 +333,31 @@ export class JsonService{
       return this.http.post(this.UrlAgregarClases, obj, this.httpOptions);
     }
 
+    postJsonAsociarSpa( obj: any){
+      return this.http.post(this.UrlAsociarSpa, obj, this.httpOptions);
+    }
+    postJsonDesasociarSpa( obj: any){
+      return this.http.post(this.UrlDesasociarSpa, obj, this.httpOptions);
+    }
+
+    postJsonAsociarProducto( obj: any){
+      return this.http.post(this.UrlAsociarProducto, obj, this.httpOptions);
+    }
+    postJsonDesasociarProducto( obj: any){
+      return this.http.post(this.UrlDesasociarProducto, obj, this.httpOptions);
+    }
+
+    postJsonAsociarInventario( obj: any){
+      return this.http.post(this.UrlAsociarInventario, obj, this.httpOptions);
+    }
+    postJsonDesasociarInventario( obj: any){
+      return this.http.post(this.UrlDesasociarInventario, obj, this.httpOptions);
+    }
+
+    postJsonAsociarServicio( obj: any){
+      return this.http.post(this.UrlAsociarServicio, obj, this.httpOptions);
+    }
+    postJsonDesasociarServicio( obj: any){
+      return this.http.post(this.UrlDesasociarServicio, obj, this.httpOptions);
+    }
 }

@@ -84,7 +84,31 @@
     </div>
        <div class="modal-body mx-3">
 
-
+        <table class="table table-striped white">
+            <thead>
+              <tr>
+                <th scope="col">Tratamientos Spa Asociado</th>
+                <th scope="col">Tratamientos Spa sin Asociar</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor=" let spasAso of TratamientoActual" >
+                    <td> {{spasAso.nombre}}</td>
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  </tr>
+                <tr *ngFor="let spas of ListaTratamientos" >
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  <td>{{spas.nombre}}</td>
+                </tr>
+            </tbody>
+          </table>
 
        </div>
    </div>
@@ -106,7 +130,31 @@
    </div></div>
        <div class="modal-body mx-3">
 
-
+        <table class="table table-striped white">
+            <thead>
+              <tr>
+                <th scope="col">Productos Asociados</th>
+                <th scope="col">Productos sin Asociar</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor=" let producAso of ProductosActual" >
+                    <td> {{producAso.nombre}}</td>
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  </tr>
+                <tr *ngFor="let producto of ListaProductos" >
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  <td>{{producto.nombre}}</td>
+                </tr>
+            </tbody>
+          </table>
         
        </div>
    </div>
@@ -128,7 +176,31 @@
    </div> </div>
        <div class="modal-body mx-3">
 
-
+        <table class="table table-striped white">
+            <thead>
+              <tr>
+                <th scope="col">Inventario Asociado</th>
+                <th scope="col">Inventario sin Asociar</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor=" let inventAso of InventarioActual" >
+                    <td> {{inventAso.tipoEquipo}}</td>
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  </tr>
+                <tr *ngFor="let inventa of ListaInventario" >
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  <td>{{inventa.tipoEquipo}}</td>
+                </tr>
+            </tbody>
+          </table>
         
        </div>
    </div>
@@ -150,6 +222,31 @@
    </div></div>
        <div class="modal-body mx-3">
 
+        <table class="table table-striped white">
+            <thead>
+              <tr>
+                <th scope="col">Servicios Asociado</th>
+                <th scope="col">Servicios sin Asociar</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor=" let ServAso of ServicioActual" >
+                    <td> {{ServAso.identificador}}</td>
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  </tr>
+                <tr *ngFor="let servicios of ListaServicios" >
+                    <td><div class="row" class = "button">
+                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
+                        </div></td>
+                  <td>{{servicios.identificador}}</td>
+                </tr>
+            </tbody>
+          </table>
 
         
        </div>
@@ -204,21 +301,21 @@
              <div class="md-form mb-5">
                <mdb-icon fas icon="calendar-alt" class="prefix white-text"></mdb-icon>
                <input type="text" name="fecha" id="InputFecha" class="form-control white-text"
-                      mdbInput required="" ngModel>
+               placeholder="dd-mm-yyyy"  mdbInput required="" ngModel>
                <label for="InputFecha" class="white-text">Fecha</label>
              </div>
    
              <div class="md-form mb-5">
                <mdb-icon fas icon="stopwatch" class="prefix white-text"></mdb-icon>
                <input type="text" name="horaInicio" id="InputHoraInicio" class="form-control white-text"
-                      mdbInput required="" ngModel>
+               placeholder="HH:mm" mdbInput required="" ngModel>
                <label for="InputHoraInicio" class="white-text">Hora Inicio</label>
              </div>
    
              <div class="md-form mb-5">
                <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
                <input type="text" name="horaFin" id="InputHoraFin" class="form-control white-text"
-                      mdbInput required="" ngModel>
+               placeholder="HH:mm" mdbInput required="" ngModel>
                <label for="InputHoraFin" class="white-text">Hora Finalización</label>
              </div>
             

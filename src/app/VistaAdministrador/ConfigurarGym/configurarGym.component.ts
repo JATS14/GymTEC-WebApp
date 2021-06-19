@@ -14,16 +14,38 @@ import { NgForm } from '@angular/forms';
     res2: Array<any> = [];
     res3: Array<any> = [];
     res4: Array<any> = [];
+    dummy:Array<any> = [];
     ClaseCopiado: Array<any> = [];
     frameCopiarAbrir : boolean = false;
 
     SucursalActual: Array<any> = [{"nombre": "prueba1"}];
-    ListaTratamientos: Array<any> = [{"nombre":"Spa1","identificador":"454545"}];
+
+    TratamientoActual:  Array<any> = [{"nombre":"Spa1Aso","identificador":"454545"}];
+    ListaTratamientos: Array<any> = [{"nombre":"NoSpa1","identificador":"454545"},
+                                      {"nombre":"NoSpa2","identificador":"454545"},
+                                      {"nombre":"NoSpa3","identificador":"454545"}];
+
+    ProductosActual:Array<any> = [{ "nombre":"Asociada","codigoBarras":58487855,
+                                  "descripcion":"Descripcion producto 1","costo":1000}];                                
     ListaProductos: Array<any> = [{"nombre":"Prodcuto1","codigoBarras":58487855,
+                                  "descripcion":"Descripcion producto 1","costo":1000},
+                                  {"nombre":"Prodcuto2","codigoBarras":58487855,
                                   "descripcion":"Descripcion producto 1","costo":1000}];
+   
+    InventarioActual: Array<any> = [{"tipoEquipo":"AsociInvent","marca":"Marca1","numeroSerie":125545,
+                                      "costo":154520,"sucursal":"Sucursal1"}];
     ListaInventario: Array<any> = [{"tipoEquipo":"tipoequipo1","marca":"Marca1","numeroSerie":125545 ,
+                                     "costo":154520,"sucursal":"Sucursal1"},
+                                   {"tipoEquipo":"tipoequipo2","marca":"Marca1","numeroSerie":125545 ,
                                      "costo":154520,"sucursal":"Sucursal1"}];
-    ListaServicios: Array<any> = [{"identificador":"Sucursal1","descripcion":"Descripcion 1"}];
+
+    ServicioActual: Array<any> = [{"identificador":"Sucursalaso1","descripcion":"Descripcion 1"},
+                                  {"identificador":"Sucursalaso2","descripcion":"Descripcion 1"}];
+    ListaServicios: Array<any> = [{"identificador":"Sucursal1","descripcion":"Descripcion 1"},
+                                  {"identificador":"Sucursal2","descripcion":"Descripcion 1"},
+                                  {"identificador":"Sucursal3","descripcion":"Descripcion 1"}];
+
+
     ListaClases: Array<any> = [{"tipo":"Tipo1","instructor":"NombreInst","individual":1,"capacidad":50,
                                   "fecha":"06-18-2021","horaInicio":"18:52","horaFin":"19:50"}];
 
@@ -109,6 +131,81 @@ import { NgForm } from '@angular/forms';
         }
       }
 
+      AsocicarSpa(object: any): void{
+        this.json.postJsonAsociarSpa(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+      DesasocicarSpa(object: any): void{
+        this.json.postJsonDesasociarSpa(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+
+      AsocicarProducto(object: any): void{
+        this.json.postJsonAsociarProducto(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+      DesasocicarProducto(object: any): void{
+        this.json.postJsonDesasociarProducto(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+
+      AsocicarInventario(object: any): void{
+        this.json.postJsonAsociarInventario(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+      DesasocicarInventario(object: any): void{
+        this.json.postJsonDesasociarInventario(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+
+      AsocicarServicio(object: any): void{
+        this.json.postJsonAsociarServicio(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+      DesasocicarServicio(object: any): void{
+        this.json.postJsonDesasociarServicio(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.dummy = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
 
 
     }
