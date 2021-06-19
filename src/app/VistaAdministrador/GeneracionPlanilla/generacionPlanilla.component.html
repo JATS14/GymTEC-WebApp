@@ -43,16 +43,7 @@
         <a class="active" >
             <mdb-icon fas icon="hand-holding-usd" class="prefix white-text"></mdb-icon>
             Generación Planilla</a> 
-
-            <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Cálculo Mensual</button>
-
-            <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-                mdbWavesEffect>Cálculo por Horas</button>
-
-                <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Cálculo por Clase</button>
-                
+    
         <a href="ConfigurarGym">
             <mdb-icon fas icon="cogs" class="prefix black-text"></mdb-icon>
             Configurar Gimnasio</a>
@@ -62,3 +53,158 @@
             Cerrar Sesión</a>
     </div>
   </div>
+
+
+  <div class="d-flex flex-nowrap"></div>
+<div *ngFor="let item of res1; let i = index" >
+    <div class="modal.show() container" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+            <h5 class="modal-title">{{item.nombre}}</h5>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-column">
+           <button type="button" mdbBtn class="btn-info btn-rounded"
+              (click) = "planillaMensual(item)" >Cálculo Planilla por Mes</button>
+            <button type="button" mdbBtn class="btn btn-success btn-rounded" 
+              (click) = "planillaHora(item)" >Cálculo Planilla por Horas </button>
+            <button type="button" mdbBtn class="btn-secondary btn-rounded" 
+              (click) = "planillaClase(item)" >Cálculo Planilla por Clases</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div mdbModal #framePlanillaMensualId="mdbModal" class="modal fade top" id="PlanillaMensualModal" tabindex="-1" role="dialog"
+  aria-labelledby="PlanillaMensualLabel" aria-hidden="true" [ngStyle]="{'display': framePlanillaMensual ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+  <div *ngFor="let sucursal of PlanillaMensual; let i = index" >
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Planilla Mensual de {{sucursal.nombre}}</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="planillaMensualClose(false)">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+  </div>
+       <div class="modal-body mx-3">
+
+        <table class="table table-striped white">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Número Cédula</th>
+              <th scope="col">Monto a Pagar</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+              <tr *ngFor="let item of resMensual; let i = index" >
+                <th scope="row">{{i}}</th>
+                <td>{{item.nombre}}</td>
+                <td>{{item.numeroCedula}}</td>
+                <td>{{item.monto}}</td>
+              </tr>
+          </tbody>
+        </table>
+
+       </div>
+       </div>
+   </div>
+ </div>
+ 
+</div>
+
+<div mdbModal #framePlanillaHoraid="mdbModal" class="modal fade top" id="PlanillaHoraModal" tabindex="-1" role="dialog"
+aria-labelledby="PlanillaHoraLabel" aria-hidden="true" [ngStyle]="{'display': framePlanillaHora ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+<div class="m2">
+<div class="modal-content">
+  <div *ngFor="let sucursal of PlanillaHora; let i = index" >
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Planilla por Hora de {{sucursal.nombre}}</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="planillaHoraClose(false)">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+</div>
+     <div class="modal-body mx-3">
+
+      <table class="table table-striped white">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Número Cédula</th>
+            <th scope="col">Cantidad Horas</th>
+            <th scope="col">Monto a Pagar</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="let item of resHora; let i = index" >
+              <th scope="row">{{i}}</th>
+              <td>{{item.nombre}}</td>
+              <td>{{item.numeroCedula}}</td>
+              <td>{{item.horas}}</td>
+              <td>{{item.monto}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+     </div>
+     </div>
+ </div>
+</div>
+</div>
+
+<div mdbModal #framePlanillaClaseId="mdbModal" class="modal fade top" id="PlanillaClaseModal" tabindex="-1" role="dialog"
+  aria-labelledby="PlanillaClaselLabel" aria-hidden="true" [ngStyle]="{'display': framePlanillaClase ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+  <div *ngFor="let sucursal of PlanillaClase; let j = index" >
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Planilla por Clase de {{sucursal.nombre}}</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="planillaClaseClose(false)">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+  </div>
+       <div class="modal-body mx-3">
+         
+          <table class="table table-striped white">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Número Cédula</th>
+                <th scope="col">Cantidad Clases</th>
+                <th scope="col">Monto a Pagar</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                <tr *ngFor="let item of resClase; let i = index" >
+                  <th scope="row">{{i}}</th>
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.numeroCedula}}</td>
+                  <td>{{item.clases}}</td>
+                  <td>{{item.monto}}</td>
+                </tr>
+            </tbody>
+          </table>
+
+        </div>
+       </div>
+   </div>
+ </div>
+</div>
+

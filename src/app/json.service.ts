@@ -80,6 +80,10 @@ export class JsonService{
       urlEliminarEmpleado = '';
       urlEditarEmpleado = '';
 
+       /* Generar Planilla*/ 
+      urlGetPlanillaMensual = '';
+      urlGetPlanillaHoras = '';
+      urlGetPlanillaClase = '';
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -268,4 +272,16 @@ export class JsonService{
     postJsonEmpleadoEditar( obj: any){
       return this.http.post(this.urlEditarEmpleado, obj, this.httpOptions);
     }
+
+    /* Generar Planilla*/ 
+    postJsonPlanillaMensual( obj: any){
+      return this.http.post(this.urlGetPlanillaMensual, obj, this.httpOptions);
+    }
+    postJsonPlanillaHoras( obj: any){
+      return this.http.post(this.urlGetPlanillaHoras, obj, this.httpOptions);
+    }
+    postJsonPlanillaClase( obj: any){
+      return this.http.post(this.urlGetPlanillaClase, obj, this.httpOptions);
+    }
+
 }
