@@ -13,16 +13,23 @@ import { NgForm } from '@angular/forms';
   export class GestionarSucursal{
 
     res1: Array<any> = [{"nombre":"Sucursal1","direccion":"Cartago-Cartago-Guadalupe",
-                            "fechaApertura":"10-500-2010","horaAtencion":"6-18",
-                            "administrador":"JuanitoMora","capacidadMaxima":50,"telefono":85125548}];
+                            "fechaApertura":"10-500-2010","horarioAtencion":"6-18",
+                            "empleadoAdmin":"JuanitoMora","capacidadMax":50,"numTelefono":85125548,
+                            "spa":"OFF","tienda":"OFF"}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];
       res5: Array<any> = [];
+      res6: Array<any> = [];
+      res7: Array<any> = [];
   
       SucursalEditando: Array<any> = [];
     
       frameEditarAbrir : boolean = false;
+
+      SucursalCopiado: Array<any> = [];
+    
+      frameCopiarAbrir : boolean = false;
 
     constructor(
         private router: Router, public json: JsonService) {
@@ -97,6 +104,51 @@ import { NgForm } from '@angular/forms';
           }
       });
       
+      }
+
+      ActivarSpa(object: any): void{
+        this.json.postJsonSucursalONOFFSpa(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.res6 = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+      ActivarTienda(object: any): void{
+        this.json.postJsonSucursalONOFFTienda(object).subscribe((resX: any) => {
+          console.log(resX);
+          this.res7 = resX;
+          if(resX.status == "exito"){
+            window.location.reload();
+          }
+      });
+      }
+
+      enviarAECopiar(editar: any){
+        this.SucursalCopiado = [editar];
+        this.frameCopiarAbrir = true;
+      }
+  
+      CopiarSucursalClose(estado : boolean){
+        this.frameCopiarAbrir = estado;
+      }
+
+      goToCopiar(CopiarSucursal: NgForm){
+        if (CopiarSucursal.valid) {
+        this.json.postJsonSucursaCopiar(CopiarSucursal.value).subscribe((resy: any) => {
+          console.log(resy);
+          this.res5 = resy;
+          if(resy.status == "exito"){
+            this.frameEditarAbrir = false;
+            window.location.reload();
+            alert('Se Copió Sucursal con éxito');
+          }
+      });
+        }
+        else{
+          alert('Error en el ingreso de datos');
+        }
       }
 
     }

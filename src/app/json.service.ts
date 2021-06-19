@@ -41,6 +41,9 @@ export class JsonService{
     urlBuscarSucursal = '';
     urlEliminarSucursal = '';
     urlEditarTSucursal = '';
+    urlONOFFSPASucursal = '';
+    urlONOFFTiendaSucursal = '';
+    urlCopiarSucursal = '';
 
     /* GESTION Servicio*/ 
     urlObtnerServicio = '';
@@ -170,6 +173,15 @@ export class JsonService{
     }
     postJsonSucursalEditar( obj: any){
       return this.http.post(this.urlEditarTSucursal, obj, this.httpOptions);
+    }
+    postJsonSucursalONOFFSpa( obj: any){
+      return this.http.post(this.urlONOFFSPASucursal, obj, this.httpOptions);
+    }
+    postJsonSucursalONOFFTienda(obj: any){
+      return this.http.post(this.urlONOFFTiendaSucursal, obj, this.httpOptions);
+    }
+    postJsonSucursaCopiar(obj: any){
+      return this.http.post(this.urlCopiarSucursal, obj, this.httpOptions);
     }
 
     /* GESTION Servicio*/ 

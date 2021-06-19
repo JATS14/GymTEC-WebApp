@@ -96,35 +96,28 @@
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
-            <input type="text" name="horaAtencion" id="InputHoraAtencion" class="form-control white-text"
+            <input type="text" name="horarioAtencion" id="InputHoraAtencion" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputHoraAtencion" class="white-text">Hora Atención</label>
           </div>
 
           <div class="md-form mb-5">
-            <mdb-icon fas icon="money-bill-alt" class="prefix white-text"></mdb-icon>
-            <input type="text" name="administrador" id="InputAdministrador" class="form-control white-text"
-                   mdbInput required="" ngModel>
-            <label for="InputAdministrador" class="white-text">Administrador</label>
-          </div>
-
-          <div class="md-form mb-5">
             <mdb-icon fas icon="user-tie" class="prefix white-text"></mdb-icon>
-            <input type="text" name="administrador" id="InputAdministrador" class="form-control white-text"
+            <input type="text" name="empleadoAdmin" id="InputAdministrador" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputAdministrador" class="white-text">Administrador</label>
           </div>
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="users" class="prefix white-text"></mdb-icon>
-            <input type="text" name="capacidadMaxima" id="InputCapacidadMaxima" class="form-control white-text"
+            <input type="text" name="capacidadMax" id="InputCapacidadMaxima" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputCapacidadMaxima" class="white-text">Capacidad Máxima</label>
           </div>
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="phone" class="prefix white-text"></mdb-icon>
-            <input type="text" name="telefono" id="InputTelefono" class="form-control white-text"
+            <input type="text" name="numTelefono" id="InputTelefono" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputTelefono" class="white-text">Teléfono</label>
           </div>
@@ -190,10 +183,12 @@ aria-labelledby="SucursalBuscadoModal" aria-hidden="true">
            <p> {{item.nombre}}</p>
            <p> Direccion: {{item.direccion}}</p>
            <p>Fecha Apertura: {{item.fechaApertura}}</p>
-           <p>Hora Atención: {{item.horaAtencion}}</p>
-           <p>Administrador: {{item.administrador}}</p>
-           <p>Capacidad Máxima: {{item.capacidadMaxima}}</p>
-           <p>Teléfono: {{item.telefono}}</p>
+           <p>Hora Atención: {{item.horarioAtencion}}</p>
+           <p>Administrador: {{item.empleadoAdmin}}</p>
+           <p>Capacidad Máxima: {{item.capacidadMax}}</p>
+           <p>Teléfono: {{item.numTelefono}}</p>
+           <p>Estado Spa: {{item.spa}}</p>
+           <p>Estado Tienda: {{item.tienda}}</p>
            <p> --------------------------</p>
        </div>
      </div>
@@ -213,14 +208,22 @@ aria-labelledby="SucursalBuscadoModal" aria-hidden="true">
             <h5 class="modal-title">{{item.nombre}}</h5>
           </div>
           <div class="modal-body">
-        <p> Direccion: {{item.direccion}}</p>
+           <p> Direccion: {{item.direccion}}</p>
            <p>Fecha Apertura: {{item.fechaApertura}}</p>
-           <p>Hora Atención: {{item.horaAtencion}}</p>
-           <p>Administrador: {{item.administrador}}</p>
-           <p>Capacidad Máxima: {{item.capacidadMaxima}}</p>
-           <p>Teléfono: {{item.telefono}}</p>
+           <p>Hora Atención: {{item.horarioAtencion}}</p>
+           <p>Administrador: {{item.empleadoAdmin}}</p>
+           <p>Capacidad Máxima: {{item.capacidadMax}}</p>
+           <p>Teléfono: {{item.numTelefono}}</p>
+           <p>Estado Spa: {{item.spa}}</p>
+           <p>Estado Tienda: {{item.tienda}}</p>
+           <button type="button" class="btn  btn-info btn-rounded"
+              (click) = "ActivarSpa(item)" >ON/OFF Spa </button>
+            <button type="button" class="btn btn-secondary btn-rounded" 
+              (click) = "ActivarTienda(item)" >ON/OFF Tienda </button>
           </div>
           <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"
+                     (click) = "enviarAECopiar(item)" >Copiar Gimnasio </button>
             <button type="button" class="btn elegant" (click) = "enviarAEditar(item)" >Editar </button>
             <button type="button" class="btn btn-danger" (click) = "Eliminar_Sucursal(item)"  >Eliminar </button>
           </div>
@@ -269,29 +272,29 @@ aria-labelledby="SucursalBuscadoModal" aria-hidden="true">
  
            <div class="md-form mb-5">
              <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
-             <input type="text" name="horaAtencion" id="InputHoraAtencion" class="form-control white-text"
-                    mdbInput required="" ngModel="{{item.horaAtencion}}">
+             <input type="text" name="horarioAtencion" id="InputHoraAtencion" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.horarioAtencion}}">
              <label for="InputHoraAtencion" class="white-text">Hora Atención</label>
            </div>
  
            <div class="md-form mb-5">
              <mdb-icon fas icon="user-tie" class="prefix white-text"></mdb-icon>
-             <input type="text" name="administrador" id="InputAdministrador" class="form-control white-text"
-                    mdbInput required="" ngModel="{{item.administrador}}">
+             <input type="text" name="empleadoAdmin" id="InputAdministrador" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.empleadoAdmin}}">
              <label for="InputAdministrador" class="white-text">Administrador</label>
            </div>
  
            <div class="md-form mb-5">
              <mdb-icon fas icon="users" class="prefix white-text"></mdb-icon>
-             <input type="text" name="capacidadMaxima" id="InputCapacidadMaxima" class="form-control white-text"
-                    mdbInput required="" ngModel="{{item.capacidadMaxima}}">
+             <input type="text" name="capacidadMax" id="InputCapacidadMaxima" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.capacidadMax}}">
              <label for="InputCapacidadMaxima" class="white-text">Capacidad Máxima</label>
            </div>
  
            <div class="md-form mb-5">
              <mdb-icon fas icon="phone" class="prefix white-text"></mdb-icon>
-             <input type="text" name="telefono" id="InputTelefono" class="form-control white-text"
-                    mdbInput required="" ngModel="{{item.telefono}}">
+             <input type="text" name="numTelefono" id="InputTelefono" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.numTelefono}}">
              <label for="Telefono" class="white-text">Teléfono</label>
             </div>
          
@@ -307,6 +310,82 @@ aria-labelledby="SucursalBuscadoModal" aria-hidden="true">
  </div>
 </div>
 
+<div mdbModal #frameCopiar="mdbModal" class="modal fade top" id="CopiarSucursalModal" tabindex="-1" role="dialog"
+aria-labelledby="CopiarrSucursalLabel" aria-hidden="true" [ngStyle]="{'display': frameCopiarAbrir ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+<div class="m2">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Copiar Sucursal</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="CopiarSucursalClose(false)">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+     <div class="modal-body mx-3">
 
+       <div *ngFor="let item of SucursalCopiado; let i = index" >
+
+       <form #CopiarSucursal = "ngForm" (ngSubmit)="goToCopiar(CopiarSucursal)">
+
+          <div class="md-form mb-5">
+          <mdb-icon fas icon="signature" class="prefix white-text"></mdb-icon>
+          <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
+                 mdbInput required="" ngModel="{{item.nombre}}">
+          <label for="InputNombre" class="white-text">Nombre</label>
+        </div>
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="directions" class="prefix white-text"></mdb-icon>
+          <input type="text" name="direccion" id="InputDireccion" class="form-control white-text"
+                 mdbInput required="" ngModel="{{item.direccion}}">
+          <label for="InputDireccion" class="white-text">Direción</label>
+        </div>
+
+        <div class="md-form mb-5">
+           <mdb-icon fas icon="calendar-alt" class="prefix white-text"></mdb-icon>
+           <input type="text" name="fechaApertura" id="InputFechaApertura" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.fechaApertura}}">
+           <label for="InputFechaApertura" class="white-text">Fecha Apertura</label>
+         </div>
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
+           <input type="text" name="horarioAtencion" id="InputHoraAtencion" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.horarioAtencion}}">
+           <label for="InputHoraAtencion" class="white-text">Hora Atención</label>
+         </div>
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="user-tie" class="prefix white-text"></mdb-icon>
+           <input type="text" name="empleadoAdmin" id="InputAdministrador" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.empleadoAdmin}}">
+           <label for="InputAdministrador" class="white-text">Administrador</label>
+         </div>
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="users" class="prefix white-text"></mdb-icon>
+           <input type="text" name="capacidadMax" id="InputCapacidadMaxima" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.capacidadMax}}">
+           <label for="InputCapacidadMaxima" class="white-text">Capacidad Máxima</label>
+         </div>
+
+         <div class="md-form mb-5">
+           <mdb-icon fas icon="phone" class="prefix white-text"></mdb-icon>
+           <input type="text" name="numTelefono" id="InputTelefono" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.numTelefono}}">
+           <label for="Telefono" class="white-text">Teléfono</label>
+          </div>
+       
+
+       <div class="row" class = "button">
+         <button type="submit" class="btn elegant" >Agregar Copia</button>
+         </div>
+       </form>
+     </div>
+     </div>
+ </div>
+</div>
+</div>
+</div>
 
 
