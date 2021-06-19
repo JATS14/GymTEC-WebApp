@@ -88,6 +88,13 @@ export class JsonService{
       urlGetPlanillaHoras = '';
       urlGetPlanillaClase = '';
 
+      /* Configurar Gimnasio*/ 
+      UrlObtenerSucursalActual = '';
+      UrlObtenerClases = '';
+      UrlEliminarClases = '';
+      UrlCopiarClases = '';
+      UrlAgregarClases = '';
+
     httpOptions = {
         headers: new HttpHeaders({
           'Content-Type':  'application/json',
@@ -296,6 +303,23 @@ export class JsonService{
     }
     postJsonPlanillaClase( obj: any){
       return this.http.post(this.urlGetPlanillaClase, obj, this.httpOptions);
+    }
+
+    /* Configurar Gimnasio*/ 
+    getJsonSucursalActual(){
+      return this.http.get(this.UrlObtenerSucursalActual);
+    }
+    getJsonClases(){
+      return this.http.get(this.UrlObtenerClases);
+    }
+    postJsonEliminarClase( obj: any){
+      return this.http.post(this.UrlEliminarClases, obj, this.httpOptions);
+    }
+    postJsonCopiarClase( obj: any){
+      return this.http.post(this.UrlCopiarClases, obj, this.httpOptions);
+    }
+    postJsonAgregarClase( obj: any){
+      return this.http.post(this.UrlAgregarClases, obj, this.httpOptions);
     }
 
 }

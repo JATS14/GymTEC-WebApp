@@ -48,20 +48,300 @@
             <mdb-icon fas icon="cogs" class="prefix white-text"></mdb-icon>
             Configurar Gimnasio</a>  
 
-            <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Asociación Trataminto Spa</button>
+            <button type="button" mdbBtn color="elegant" data-toggle="modalSpa" data-target="#AsociarSpa" 
+            (click)="frame1.show()" mdbWavesEffect>Asociación Trataminto Spa</button>
 
-            <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-                mdbWavesEffect>Asociación Producto</button>
+            <button type="button" mdbBtn color="elegant" data-toggle="modalProducto" data-target="#AsociarProdcuto"  
+            (click)="frame2.show()" mdbWavesEffect>Asociación Producto</button>
 
-                <button type="button" mdbBtn color="elegant" data-toggle="modalAgregar" data-target="#agregarDispositivoModal" 
-                mdbWavesEffect>Asociación Inventario</button>
+            <button type="button" mdbBtn color="elegant" data-toggle="modalInventario" data-target="#AsociarInventario" 
+            (click)="frame3.show()" mdbWavesEffect>Asociación Inventario</button>
 
-            <button type="button" mdbBtn color="elegant" data-toggle="modalBuscar" data-target="#buscarDipositivoModal"  
-                mdbWavesEffect>Crear Clase</button> 
+            <button type="button" mdbBtn color="elegant" data-toggle="modalServicio" data-target="#AsociarServicio" 
+            (click)="frame4.show()" mdbWavesEffect>Asociación Servicios</button>
+
+            <button type="button" mdbBtn color="elegant" data-toggle="modalClase" data-target="#crearClase"  
+            (click)="frame5.show()" mdbWavesEffect>Crear Clase</button> 
             
         <a class="exit" href="#" >
             <mdb-icon fas icon="sign-out-alt" class="prefix black-text"></mdb-icon>
             Cerrar Sesión</a>
     </div>
   </div>
+
+  <div mdbModal #frame1="mdbModal" class="modal fade top" id="AsociarSpaModal" tabindex="-1" role="dialog"
+  aria-labelledby="AsociarSpaLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+    <div *ngFor="let item of SucursalActual; let i = index" >
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Asociació Tratamiento Spa: {{item.nombre}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame1.hide()">
+        <span aria-hidden="true">&times;</span>
+         </button>
+        </div>
+    </div>
+       <div class="modal-body mx-3">
+
+
+
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frame2="mdbModal" class="modal fade top" id="AsociarProductosModal" tabindex="-1" role="dialog"
+  aria-labelledby="AsociarProductosLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+    <div *ngFor="let item of SucursalActual; let i = index" >
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Asociació Productos: {{item.nombre}}</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame2.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div></div>
+       <div class="modal-body mx-3">
+
+
+        
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frame3="mdbModal" class="modal fade top" id="AsociarInventarioModal" tabindex="-1" role="dialog"
+  aria-labelledby="AsociarInventarioLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+    <div *ngFor="let item of SucursalActual; let i = index" >
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Asociació Inventario: {{item.nombre}} </h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame3.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div> </div>
+       <div class="modal-body mx-3">
+
+
+        
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frame4="mdbModal" class="modal fade top" id="AsociarServiciosModal" tabindex="-1" role="dialog"
+  aria-labelledby="AsociarServiciosLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+    <div *ngFor="let item of SucursalActual; let i = index" >
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Asociació Servicios: {{item.nombre}} </h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame4.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div></div>
+       <div class="modal-body mx-3">
+
+
+        
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frame5="mdbModal" class="modal fade top" id="CrearClaseModal" tabindex="-1" role="dialog"
+  aria-labelledby="CrearClaseLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+ <div class="m2">
+ <div class="modal-content">
+    <div *ngFor="let item of SucursalActual; let i = index" >
+   <div class="modal-header text-center">
+     <h4 class="modal-title w-100 font-weight-bold">Crear Clase para  {{item.nombre}}</h4>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame5.hide()">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div></div>
+       <div class="modal-body mx-3">
+        <form #AgrgarSucursal = "ngForm" (ngSubmit)="goTo(AgrgarSucursal)">
+
+            <div class="md-form mb-5">
+              <mdb-icon fas icon="dumbbell" class="prefix white-text"></mdb-icon>
+              <input type="text" name="tipo" id="InputTipo" class="form-control white-text"
+                     mdbInput required="" ngModel>
+              <label for="InputTipo" class="white-text">Tipo</label>
+            </div>
+   
+            <div class="md-form mb-5">
+              <mdb-icon fas icon="chalkboard-teacher" class="prefix white-text"></mdb-icon>
+              <input type="text" name="instructor" id="InputInstructor" class="form-control white-text"
+                     mdbInput required="" ngModel>
+              <label for="InputInstructor" class="white-text">instructor</label>
+            </div>
+   
+            <div class="md-form mb-5">
+               <mdb-icon fas icon="user-plus" class="prefix white-text"></mdb-icon>
+               <input type="text" name="individual" id="InputIndividual" class="form-control white-text"
+                      mdbInput required="" ngModel>
+               <label for="InputIndividual" class="white-text">Individual</label>
+             </div>
+   
+             <div class="md-form mb-5">
+               <mdb-icon fas icon="users" class="prefix white-text"></mdb-icon>
+               <input type="text" name="capacidad" id="InputCapacidad" class="form-control white-text"
+                      mdbInput required="" ngModel>
+               <label for="InputCapacidad" class="white-text">Capacidad Máxima</label>
+             </div>
+   
+             <div class="md-form mb-5">
+               <mdb-icon fas icon="calendar-alt" class="prefix white-text"></mdb-icon>
+               <input type="text" name="fecha" id="InputFecha" class="form-control white-text"
+                      mdbInput required="" ngModel>
+               <label for="InputFecha" class="white-text">Fecha</label>
+             </div>
+   
+             <div class="md-form mb-5">
+               <mdb-icon fas icon="stopwatch" class="prefix white-text"></mdb-icon>
+               <input type="text" name="horaInicio" id="InputHoraInicio" class="form-control white-text"
+                      mdbInput required="" ngModel>
+               <label for="InputHoraInicio" class="white-text">Hora Inicio</label>
+             </div>
+   
+             <div class="md-form mb-5">
+               <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
+               <input type="text" name="horaFin" id="InputHoraFin" class="form-control white-text"
+                      mdbInput required="" ngModel>
+               <label for="InputHoraFin" class="white-text">Hora Finalización</label>
+             </div>
+            
+            <div class="row" class = "button">
+              <button type="submit" class="btn elegant" >Enviar</button>
+              </div>
+   
+            </form>
+
+        
+       </div>
+   </div>
+ </div>
+ </div>
+</div>
+
+<div mdbModal #frameCopiar="mdbModal" class="modal fade top" id="CopiarClaseModal" tabindex="-1" role="dialog"
+aria-labelledby="CopiarClaseLabel" aria-hidden="true" [ngStyle]="{'display': frameCopiarAbrir ? 'block' : 'none', 'opacity': 1}">
+<div class="modal-dialog" role="document">
+<div class="m3">
+<div class="modal-content">
+ <div class="modal-header text-center">
+   <h4 class="modal-title w-100 font-weight-bold">Copiar Clase</h4>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="CopiarClaseClose(false)">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+     <div class="modal-body mx-3">
+
+       <div *ngFor="let item of ClaseCopiado; let i = index" >
+
+       <form #CopiarClase = "ngForm" (ngSubmit)="goToCopiar(CopiarClase)">
+
+        <div class="md-form mb-5">
+            <mdb-icon fas icon="dumbbell" class="prefix white-text"></mdb-icon>
+            <input type="text" name="tipo" id="InputTipo" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.tipo}}">
+            <label for="InputTipo" class="white-text">Tipo</label>
+          </div>
+ 
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="chalkboard-teacher" class="prefix white-text"></mdb-icon>
+            <input type="text" name="instructor" id="InputInstructor" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.instructor}}">
+            <label for="InputInstructor" class="white-text">instructor</label>
+          </div>
+ 
+          <div class="md-form mb-5">
+             <mdb-icon fas icon="user-plus" class="prefix white-text"></mdb-icon>
+             <input type="text" name="individual" id="InputIndividual" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.individual}}">
+             <label for="InputIndividual" class="white-text">Individual</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="users" class="prefix white-text"></mdb-icon>
+             <input type="text" name="capacidad" id="InputCapacidad" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.capacidad}}">
+             <label for="InputCapacidad" class="white-text">Capacidad Máxima</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="calendar-alt" class="prefix white-text"></mdb-icon>
+             <input type="text" name="fecha" id="InputFecha" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.fecha}}">
+             <label for="InputFecha" class="white-text">Fecha</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="stopwatch" class="prefix white-text"></mdb-icon>
+             <input type="text" name="horaInicio" id="InputHoraInicio" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.horaInicio}}">
+             <label for="InputHoraInicio" class="white-text">Hora Inicio</label>
+           </div>
+ 
+           <div class="md-form mb-5">
+             <mdb-icon fas icon="clock" class="prefix white-text"></mdb-icon>
+             <input type="text" name="horaFin" id="InputHoraFin" class="form-control white-text"
+                    mdbInput required="" ngModel="{{item.horaFin}}">
+             <label for="InputHoraFin" class="white-text">Hora Finalización</label>
+           </div>
+       
+
+       <div class="row" class = "button">
+         <button type="submit" class="btn elegant" >Agregar Copia</button>
+         </div>
+       </form>
+     </div>
+     </div>
+ </div>
+</div>
+</div>
+</div>
+
+
+<div class="d-flex flex-nowrap"></div>
+<div *ngFor="let item of ListaClases; let i = index" >
+    <div class="modal.show() container" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+            <h5 class="modal-title">{{item.tipo}}</h5>
+          </div>
+          <div class="modal-body">
+           <p> Instructor: {{item.instructor}}</p>
+           <p> Individual: {{item.individual}}</p>
+           <p>--(0=Grupal, 1= individual)--</p>
+           <p>Capacidad Máxima: {{item.capacidad}}</p>
+           <p>Fecha: {{item.fecha}}</p>
+           <p>Hora Inicio: {{item.horaInicio}}</p>
+           <p>Hora Finalización: {{item.horaFin}}</p>
+
+            <button type="button" class="btn btn-outline-light" data-mdb-ripple-color="dark"
+                     (click) = "enviarCopiarClase(item)" >Copiar Actividad </button>
+            <button type="button" class="btn btn-danger" (click) = "Eliminar_Clase(item)"  >Eliminar </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
