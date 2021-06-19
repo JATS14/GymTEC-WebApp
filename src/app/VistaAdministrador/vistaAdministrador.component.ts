@@ -11,11 +11,14 @@ import { NgForm } from '@angular/forms';
   })
 
   export class VistaAdministrador{
-
+    res1: Array<any> = [{"nombre": "prueba1"}];
     constructor(
         private router: Router, public json: JsonService
       ) {
-
+        /* this.json.getJsonRolActual().subscribe((res: any) => {
+            console.log(res);
+            this.res1 = res;
+          });*/
       }
 
 

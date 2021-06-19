@@ -53,3 +53,27 @@
             Cerrar Sesión</a>
     </div>
   </div>
+
+  <div class="d-flex flex-nowrap"></div>
+  <div *ngFor="let item of res1; let i = index" >
+      <div class="modal.show() container" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            
+            <div class="modal-header">
+             
+              <h5 class="modal-title"> <mdb-icon fas icon="user-circle" class="prefix white-text fa-lg"></mdb-icon> {{item.nombre}} </h5>
+            </div>
+            <div class="modal-body">
+
+            <p> <mdb-icon fas icon="briefcase" class="prefix white-text fa-lg"></mdb-icon> Puesto: {{item.puesto}}</p>
+            <p><mdb-icon fas icon="map-marker-alt" class="prefix white-text fa-lg"></mdb-icon> Sucursal: {{item.sucursal}}</p>
+            <p> <mdb-icon fas icon="map-marked-alt" class="prefix white-text fa-lg"></mdb-icon> Direccion: {{item.direccion}}</p>
+            <p> <mdb-icon fas icon="at" class="prefix white-text fa-lg" ></mdb-icon> Correo: {{item.correo}}</p>
+            <p><mdb-icon fas icon="id-card" class="prefix white-text fa-lg"></mdb-icon> Número de Cédula: {{item.numCedula}}</p>
+   
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -29,13 +29,15 @@ export class PrincipalComponent implements OnInit {
               alert('El usuario no existe o la contraseña es incorrecta');
             }
             if (res.status  == "admin"){
+              this.json.postJsonRolActual(formLogin.value).subscribe((res: any) => {
+                console.log(res);
+                });
               this.router.navigate([ '/VistaAdministrador' ])
             }
             if (res.status  == "usuario"){
               this.json.postJsonUsuarioActual(formLogin.value).subscribe((res: any) => {
                 console.log(res);
                 });
-    
               this.router.navigate([ '/VistaUsuario' ])
             }
           });

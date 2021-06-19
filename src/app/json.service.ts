@@ -14,6 +14,9 @@ export class JsonService{
     urlUsuarioActualGET= '';
     urlUsuarioActualSET= '';
 
+    urlRolActualGET = '';
+    urlRolActualSET = '';
+
     /* GESTION TRATAMIENTO SPA*/ 
     urlObtnerSpas = '';
     urlAgregarSpa = '';
@@ -92,6 +95,9 @@ export class JsonService{
         })
       };
       
+
+
+
       constructor(private http: HttpClient) { }
 
       /*Login - register*/
@@ -108,6 +114,14 @@ export class JsonService{
   
     postJsonUsuarioActual( obj: any){
       return this.http.post(this.urlUsuarioActualSET, obj, this.httpOptions);
+    }
+
+    getJsonRolActual(){
+      return this.http.get(this.urlRolActualGET);
+    }
+  
+    postJsonRolActual( obj: any){
+      return this.http.post(this.urlRolActualSET, obj, this.httpOptions);
     }
 
 
