@@ -4,34 +4,37 @@
         <form #formregister = "ngForm" (ngSubmit)="goToRegister(formregister)">
 
           <div class="row">
-            <label>Nombre:</label>
+            <label>Nombre Completo:</label>
             <input type="text" name="nombre" class="normal" id="InputNombre" required="" ngModel>
           </div>
           <div class="row">
-            <label>Apellido:</label>
-            <input type="text" name="apellido" class="normal" id="InputApellido" required="" ngModel>
+            <label>Número de Cédula:</label>
+            <input type="text" name="numCedula" class="normal" id="InputNumCedula" required="" ngModel>
           </div>
           <div class="row">
-            <label>Correo:</label>
-            <input type="email" name="correo" class="normal" id="InputCorreo" required=""ngModel>
+            <label>Edad:</label>
+            <input type="text" name="edad" class="normal" id="InputEdad" required=""ngModel>
+          </div>
+          <div class="row">
+            <label>Peso:</label>
+            <input type="text" name="peso" class="normal" id="InputPeso" required="" ngModel>
+          </div>
+          <div class="row">
+            <label>IMC:</label>
+            <input type="text" name="IMC" class="normal" id="InputIMC" required="" ngModel>
+          </div>
+          <div class="row">
+            <label>Dirección:</label>
+            <input type="text" name="direccion" class="normal" id="InputDireccion" required="" ngModel>
+          </div>
+          <div class="row">
+            <label>Correo Electrónico:</label>
+            <input type="email" name="correoElectronico" class="normal" id="InputcorreoElectronico" required="" ngModel>
           </div>
           <div class="row">
             <label>Contraseña:</label>
             <input type="password" name="contrasena" class="normal" id="InputPassword" required="" ngModel>
           </div>
-          <div class="row">
-            <label>Continente:</label>
-            <input type="text" name="pais" class="normal" id="InputPais" required="" ngModel>
-          </div>
-          <div class="row">
-            <label>País:</label>
-            <input type="text" name="region" class="normal" id="InputRegion" required="" ngModel>
-          </div>
-          <div class="row">
-            <label>Direccion:</label>
-            <input type="text" name="direccion" class="normal" id="InputDireccion" required="" ngModel>
-          </div>
-
 
           <div class="row" class = "button">
             <button mdbBtn type="submit" color="blue-grey" mdbWavesEffect >Registrarse</button>
