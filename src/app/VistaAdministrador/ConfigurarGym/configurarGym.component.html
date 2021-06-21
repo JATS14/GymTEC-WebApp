@@ -270,6 +270,13 @@
        <div class="modal-body mx-3">
         <form #AgrgarSucursal = "ngForm" (ngSubmit)="goTo(AgrgarSucursal)">
 
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+            <input type="text" name="idClase" id="InputidClase" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputidClase" class="white-text">idClase</label>
+          </div>
+
             <div class="md-form mb-5">
               <mdb-icon fas icon="dumbbell" class="prefix white-text"></mdb-icon>
               <input type="text" name="tipo" id="InputTipo" class="form-control white-text"
@@ -348,6 +355,14 @@ aria-labelledby="CopiarClaseLabel" aria-hidden="true" [ngStyle]="{'display': fra
        <div *ngFor="let item of ClaseCopiado; let i = index" >
 
        <form #CopiarClase = "ngForm" (ngSubmit)="goToCopiar(CopiarClase)">
+
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+          <input type="text" name="idClase" id="InputidClase" class="form-control white-text"
+                 mdbInput required="" ngModel="{{item.idClase}}">
+          <label for="InputidClase" class="white-text">idClase</label>
+        </div>
+
 
         <div class="md-form mb-5">
             <mdb-icon fas icon="dumbbell" class="prefix white-text"></mdb-icon>

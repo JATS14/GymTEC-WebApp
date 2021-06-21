@@ -46,7 +46,7 @@ import { NgForm } from '@angular/forms';
                                   {"identificador":"Sucursal3","descripcion":"Descripcion 1"}];
 
 
-    ListaClases: Array<any> = [{"tipo":"Tipo1","instructor":"NombreInst","individual":1,"capacidad":50,
+    ListaClases: Array<any> = [{"idClase":"12313","tipo":"Tipo1","instructor":"NombreInst","individual":1,"capacidad":50,
                                   "fecha":"06-18-2021","horaInicio":"18:52","horaFin":"19:50"}];
 
     constructor(

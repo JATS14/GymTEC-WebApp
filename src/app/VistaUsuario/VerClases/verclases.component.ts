@@ -28,9 +28,11 @@ import { NgForm } from '@angular/forms';
         this.json.postJsonRegistroClase(object).subscribe((resX: any) => {
           console.log(resX);
           this.dummy = resX;
-          if(resX.status == "exito"){
+          if(resX.status == "agregado"){
             window.location.reload();
             alert('Se Registró con exito');
+          }if (resX.status == "lleno"){
+            alert('El cupo ya está lleno');
           }
       });
       
