@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
   })
 
   export class GestionarTratamiento{
-    res1: Array<any> = [{"nombre":"Spa1","identificador":"454545"}];
+    res1: Array<any> = [{"nombre":"Spa1","id_spa":"454545"}];
     res2: Array<any> = [];
     res3: Array<any> = [];
     res4: Array<any> = [];

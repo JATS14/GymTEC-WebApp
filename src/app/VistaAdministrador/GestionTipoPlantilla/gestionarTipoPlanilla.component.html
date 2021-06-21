@@ -75,9 +75,9 @@
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-           <input type="text" name="identificador" id="InputIdentificador" class="form-control white-text"
+           <input type="text" name="id_TipoPlanilla" id="Inputid_TipoPlanilla" class="form-control white-text"
                   mdbInput required="" ngModel>
-           <label for="InputIdentificador" class="white-text">Identificador</label>
+           <label for="Inputid_TipoPlanilla" class="white-text">Identificador</label>
          </div>
 
          <div class="md-form mb-5">
@@ -96,14 +96,14 @@
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="money-bill" class="prefix white-text"></mdb-icon>
-            <input type="text" name="pagoHora" id="InputPagoHora" class="form-control white-text"
+            <input type="text" name="pagoXhora" id="InputPagoHora" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputPagoHora" class="white-text">Pago por Hora</label>
           </div>
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="money-bill-alt" class="prefix white-text"></mdb-icon>
-            <input type="text" name="pagoClase" id="InputPagoClase" class="form-control white-text"
+            <input type="text" name="pagoXclase" id="InputPagoClase" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputPagoClase" class="white-text">Pago por Clase</label>
           </div>
@@ -169,11 +169,11 @@ aria-labelledby="TipoPlantillaBuscadoModal" aria-hidden="true">
    <div class="container">
      <div class="col align-self-start">
            
-           <p> {{item.identificador}}</p>
+           <p> {{item.id_TipoPlanilla}}</p>
            <p> Descripción: {{item.descripcion}}</p>
            <p>Pago Por Mes: {{item.pagoMensual}}</p>
-           <p>Pago por Hora: {{item.pagoHoras}}</p>
-           <p>Pago por Clase: {{item.pagoClase}}</p>
+           <p>Pago por Hora: {{item.pagoXhora}}</p>
+           <p>Pago por Clase: {{item.pagoXclase}}</p>
            <p> --------------------------</p>
        </div>
      </div>
@@ -190,13 +190,13 @@ aria-labelledby="TipoPlantillaBuscadoModal" aria-hidden="true">
         <div class="modal-content">
           
           <div class="modal-header">
-            <h5 class="modal-title">{{item.identificador}}</h5>
+            <h5 class="modal-title">{{item.id_TipoPlanilla}}</h5>
           </div>
           <div class="modal-body">
             <p> Descripción: {{item.descripcion}}</p>
            <p>Pago Por Mes: {{item.pagoMensual}}</p>
-           <p>Pago por Hora: {{item.pagoHoras}}</p>
-           <p>Pago por Clase: {{item.pagoClase}}</p>
+           <p>Pago por Hora: {{item.pagoXhora}}</p>
+           <p>Pago por Clase: {{item.pagoXclase}}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn elegant" (click) = "enviarAEditar(item)" >Editar </button>
@@ -226,8 +226,8 @@ aria-labelledby="TipoPlantillaBuscadoModal" aria-hidden="true">
     
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-                  <input type="text" name="identificador" id="InputIdentificador" class="form-control white-text"
-                         mdbInput required="" ngModel="{{item.identificador}}">
+                  <input type="text" name="id_TipoPlanilla" id="InputIdentificador" class="form-control white-text"
+                         mdbInput required="" ngModel="{{item.id_TipoPlanilla}}">
                   <label for="InputIdentificador" class="white-text">Identificador</label>
                 </div>
                 
@@ -247,15 +247,15 @@ aria-labelledby="TipoPlantillaBuscadoModal" aria-hidden="true">
 
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="money-bill" class="prefix white-text"></mdb-icon>
-                  <input type="text" name="pagoHoras" id="InputPagoHoras" class="form-control white-text"
-                         mdbInput required="" ngModel="{{item.pagoHoras}}">
+                  <input type="text" name="pagoXhora" id="InputPagoHoras" class="form-control white-text"
+                         mdbInput required="" ngModel="{{item.pagoXhora}}">
                   <label for="InputPagoHoras" class="white-text">Pago por Horas</label>
                 </div>
 
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="money-bill-alt" class="prefix white-text"></mdb-icon>
-                  <input type="text" name="pagoClase" id="InputPagoClase" class="form-control white-text"
-                         mdbInput required="" ngModel="{{item.pagoClase}}">
+                  <input type="text" name="pagoXclase" id="InputPagoClase" class="form-control white-text"
+                         mdbInput required="" ngModel="{{item.pagoXclase}}">
                   <label for="InputPagoClase" class="white-text">Pago por Clase</label>
                 </div>
 

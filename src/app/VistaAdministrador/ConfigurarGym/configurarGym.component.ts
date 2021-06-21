@@ -116,7 +116,7 @@ import { NgForm } from '@angular/forms';
 
       goToCopiar(CopiarClase: NgForm){
         if (CopiarClase.valid) {
-        this.json.postJsonCopiarClase(CopiarClase.value).subscribe((resy: any) => {
+        this.json.postJsonSucursalAgregar(CopiarClase.value).subscribe((resy: any) => {
           console.log(resy);
           this.res4 = resy;
           if(resy.status == "exito"){

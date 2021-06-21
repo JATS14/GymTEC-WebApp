@@ -12,9 +12,9 @@ import { NgForm } from '@angular/forms';
 
   export class GestionarEmpleados{
     
-    res1: Array<any> = [{"nombre":"Nombre1","numeroCedula":305250652,"direccion":"Cartago-Cartago-Guadalupe",
+    res1: Array<any> = [{"numCedula":305250652,"nombre":"Nombre1","direccion":"Cartago-Cartago-Guadalupe",
                           "puesto":"puesto1","sucursal":"nombresucursal",
-                          "tipoPlanilla":"Planilla1","correo":"akjsdkad@ajdkdajs","contrasena":"pepiro1"}];
+                          "tipoPlanilla":"Planilla1","salario":154000,"correoElectronico":"akjsdkad@ajdkdajs","password":"pepiro1"}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];

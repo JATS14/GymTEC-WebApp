@@ -75,7 +75,7 @@
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-           <input type="text" name="identificador" id="InputIdentificador" class="form-control white-text"
+           <input type="text" name="id_puesto" id="InputIdentificador" class="form-control white-text"
                   mdbInput required="" ngModel>
            <label for="InputIdentificador" class="white-text">identificador</label>
          </div>
@@ -145,7 +145,7 @@ aria-labelledby="PuestoBuscadoModal" aria-hidden="true">
    <div class="container">
      <div class="col align-self-start">
            
-           <p> {{item.identificador}}</p>
+           <p> {{item.id_puesto}}</p>
            <p> Descripción: {{item.descripcion}}</p>
            <p> --------------------------</p>
        </div>
@@ -163,7 +163,7 @@ aria-labelledby="PuestoBuscadoModal" aria-hidden="true">
         <div class="modal-content">
           
           <div class="modal-header">
-            <h5 class="modal-title">{{item.identificador}}</h5>
+            <h5 class="modal-title">{{item.id_puesto}}</h5>
           </div>
           <div class="modal-body">
             <p> Descripción: {{item.descripcion}}</p>
@@ -196,8 +196,8 @@ aria-labelledby="PuestoBuscadoModal" aria-hidden="true">
 
             <div class="md-form mb-5">
                 <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-                <input type="text" name="identificador" id="InputIdentificador" class="form-control white-text"
-                       mdbInput required="" ngModel="{{item.identificador}}">
+                <input type="text" name="id_puesto" id="InputIdentificador" class="form-control white-text"
+                       mdbInput required="" ngModel="{{item.id_puesto}}">
                 <label for="InputIdentificador" class="white-text">identificador</label>
               </div>
      

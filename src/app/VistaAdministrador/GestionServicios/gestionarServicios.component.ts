@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
   })
 
   export class GestionarServicios{
-    res1: Array<any> = [{"identificador":"Sucursal1","descripcion":"Descripcion 1"}];
+    res1: Array<any> = [{"nombre_servicio":"servicio1","descripcion":"Descripcion 1"}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];

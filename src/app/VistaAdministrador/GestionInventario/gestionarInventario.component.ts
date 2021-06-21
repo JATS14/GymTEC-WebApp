@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 
   export class GestionarInventario{
 
-    res1: Array<any> = [{"tipoEquipo":"tipoequipo1","marca":"Marca1","numeroSerie":125545 ,
+    res1: Array<any> = [{"tipoMaquina":"tipoequipo1","marca":"Marca1","numSerie":125545 ,
                           "costo":154520,"sucursal":"Sucursal1"}];
       res2: Array<any> = [];
       res3: Array<any> = [];

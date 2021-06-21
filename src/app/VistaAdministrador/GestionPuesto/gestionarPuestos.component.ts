@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 
   export class GestionarPuestos{
     
-     res1: Array<any> = [{"identificador":"Puesto 1","descripcion":"descripcion pyuesto 1"}];
+     res1: Array<any> = [{"id_puesto":"Puesto 1","descripcion":"descripcion pyuesto 1"}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];

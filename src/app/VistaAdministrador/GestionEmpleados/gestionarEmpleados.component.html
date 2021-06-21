@@ -73,6 +73,14 @@
        <div class="modal-body mx-3">
          <form #AgrgarEmpleado = "ngForm" (ngSubmit)="goTo(AgrgarEmpleado)">
 
+          
+         <div class="md-form mb-5">
+          <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+          <input type="text" name="numCedula" id="InputNumeroCedula" class="form-control white-text"
+                 mdbInput required="" ngModel>
+          <label for="InputNumeroCedula" class="white-text">Número de Cédula</label>
+        </div>
+
          <div class="md-form mb-5">
            <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
            <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
@@ -80,12 +88,6 @@
            <label for="InputNombre" class="white-text">Nombre</label>
          </div>
 
-         <div class="md-form mb-5">
-            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-            <input type="text" name="numeroCedula" id="InputNumeroCedula" class="form-control white-text"
-                   mdbInput required="" ngModel>
-            <label for="InputNumeroCedula" class="white-text">Número de Cédula</label>
-          </div>
           
          <div class="md-form mb-5">
             <mdb-icon fas icon="directions" class="prefix white-text"></mdb-icon>
@@ -115,17 +117,24 @@
                    mdbInput required="" ngModel>
             <label for="InputTipoPlanilla" class="white-text">Tipo Planilla</label>
           </div>
+          
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="money-bill" class="prefix white-text"></mdb-icon>
+            <input type="text" name="salario" id="InputSalario" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputSalario" class="white-text">Salario</label>
+          </div>
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="at" class="prefix white-text"></mdb-icon>
-            <input type="text" name="correo" id="InputCorreo" class="form-control white-text"
+            <input type="text" name="correoElectronico" id="InputCorreo" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputCorreo" class="white-text">Correo</label>
           </div>
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="key" class="prefix white-text"></mdb-icon>
-            <input type="text" name="contrasena" id="InputContrasena" class="form-control white-text"
+            <input type="text" name="password" id="InputContrasena" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputContrasena" class="white-text">Contraseña</label>
           </div>
@@ -189,12 +198,13 @@ aria-labelledby="EmpleadoBuscadoModal" aria-hidden="true">
      <div class="col align-self-start">
            
            <p> {{item.nombre}}</p>
-           <p> Número de Cédula: {{item.numeroCedula}}</p>
+           <p> Número de Cédula: {{item.numCedula}}</p>
            <p>Direccion: {{item.direccion}}</p>
            <p>Puesto: {{item.puesto}}</p>
            <p>Sucursal: {{item.sucursal}}</p>
-           <p>Tipod ePlanilla: {{item.tipoPlanilla}}</p>
-           <p>Correo: {{item.correo}}</p>
+           <p>Tipo de Planilla: {{item.tipoPlanilla}}</p>
+           <p>Salario: {{item.salario}}</p>
+           <p>Correo: {{item.correoElectronico}}</p>
            <p> --------------------------</p>
        </div>
      </div>
@@ -214,12 +224,13 @@ aria-labelledby="EmpleadoBuscadoModal" aria-hidden="true">
             <h5 class="modal-title">{{item.nombre}}</h5>
           </div>
           <div class="modal-body">
-            <p> Número de Cédula: {{item.numeroCedula}}</p>
+            <p> Número de Cédula: {{item.numCedula}}</p>
             <p>Direccion: {{item.direccion}}</p>
             <p>Puesto: {{item.puesto}}</p>
             <p>Sucursal: {{item.sucursal}}</p>
-            <p>Tipod ePlanilla: {{item.tipoPlanilla}}</p>
-            <p>Correo: {{item.correo}}</p>
+            <p>Tipo de Planilla: {{item.tipoPlanilla}}</p>
+           <p>Salario: {{item.salario}}</p>
+            <p>Correo: {{item.correoElectronico}}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn elegant" (click) = "enviarAEditar(item)" >Editar </button>
@@ -247,19 +258,22 @@ aria-labelledby="EmpleadoBuscadoModal" aria-hidden="true">
 
          <form #EditarEmpleadoEditado = "ngForm" (ngSubmit)="goToEditar(EditarEmpleadoEditado)">
 
-             <div class="md-form mb-5">
+             
+
+            
+         <div class="md-form mb-5">
+          <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+          <input type="text" name="numCedula" id="InputNumeroCedula" class="form-control white-text"
+                 mdbInput required="" ngModel="{{item.numCedula}}">
+          <label for="InputNumeroCedula" class="white-text">Número de Cédula</label>
+        </div>
+        
+        <div class="md-form mb-5">
            <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
            <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
                   mdbInput required="" ngModel="{{item.nombre}}">
            <label for="InputNombre" class="white-text">Nombre</label>
          </div>
-
-         <div class="md-form mb-5">
-            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-            <input type="text" name="numeroCedula" id="InputNumeroCedula" class="form-control white-text"
-                   mdbInput required="" ngModel="{{item.numeroCedula}}">
-            <label for="InputNumeroCedula" class="white-text">Número de Cédula</label>
-          </div>
           
          <div class="md-form mb-5">
             <mdb-icon fas icon="directions" class="prefix white-text"></mdb-icon>
@@ -267,7 +281,6 @@ aria-labelledby="EmpleadoBuscadoModal" aria-hidden="true">
                    mdbInput required="" ngModel="{{item.direccion}}">
             <label for="InputDireccion" class="white-text">Direción</label>
           </div>
- 
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="briefcase" class="prefix white-text"></mdb-icon>
@@ -291,16 +304,23 @@ aria-labelledby="EmpleadoBuscadoModal" aria-hidden="true">
           </div>
 
           <div class="md-form mb-5">
+            <mdb-icon fas icon="money-bill" class="prefix white-text"></mdb-icon>
+            <input type="text" name="salario" id="InputSalario" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.salario}}">
+            <label for="InputSalario" class="white-text">Salario</label>
+          </div>
+
+          <div class="md-form mb-5">
             <mdb-icon fas icon="at" class="prefix white-text"></mdb-icon>
-            <input type="text" name="correo" id="InputCorreo" class="form-control white-text"
-                   mdbInput required="" ngModel="{{item.correo}}">
+            <input type="text" name="correoElectronico" id="InputCorreo" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.correoElectronico}}">
             <label for="InputCorreo" class="white-text">Correo</label>
           </div>
 
           <div class="md-form mb-5">
             <mdb-icon fas icon="key" class="prefix white-text"></mdb-icon>
-            <input type="text" name="contrasena" id="InputContrasena" class="form-control white-text"
-                   mdbInput required="" ngModel="{{item.contrasena}}">
+            <input type="text" name="password" id="InputContrasena" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.password}}">
             <label for="InputContrasena" class="white-text">Contraseña</label>
           </div>
          

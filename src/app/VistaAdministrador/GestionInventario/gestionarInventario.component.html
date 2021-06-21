@@ -76,9 +76,9 @@
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="signature" class="prefix white-text"></mdb-icon>
-           <input type="text" name="tipoEquipo" id="InputTipoEquipo" class="form-control white-text"
+           <input type="text" name="tipoMaquina" id="InputTipoEquipo" class="form-control white-text"
                   mdbInput required="" ngModel>
-           <label for="InputTipoEquipo" class="white-text">Tipo de Equipo</label>
+           <label for="InputTipoEquipo" class="white-text">Tipo Máquina</label>
          </div>
 
          <div class="md-form mb-5">
@@ -90,7 +90,7 @@
 
          <div class="md-form mb-5">
             <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-            <input type="text" name="numeroSerie" id="InputNumeroSerie" class="form-control white-text"
+            <input type="text" name="numSerie" id="InputNumeroSerie" class="form-control white-text"
                    mdbInput required="" ngModel>
             <label for="InputNumeroSerie" class="white-text">Número de Serie</label>
           </div>
@@ -168,9 +168,9 @@ aria-labelledby="InventarioBuscadoModal" aria-hidden="true">
    <div class="container">
      <div class="col align-self-start">
            
-           <p>Tipo de Equipo {{item.tipoEquipo}}</p>
+           <p>Tipo de Equipo {{item.tipoMaquina}}</p>
            <p>Marca: {{item.marca}}</p>
-           <p>Número de Serie: {{item.numeroSerie}}</p>
+           <p>Número de Serie: {{item.numSerie}}</p>
            <p>Costo:$ {{item.costo}}</p>
            <p>Sucursal: {{item.sucursal}}</p>
            <p> --------------------------</p>
@@ -190,11 +190,11 @@ aria-labelledby="InventarioBuscadoModal" aria-hidden="true">
         <div class="modal-content">
           
           <div class="modal-header">
-            <h5 class="modal-title">Tipo de Equipo {{item.tipoEquipo}}</h5>
+            <h5 class="modal-title">Tipo de Equipo {{item.tipoMaquina}}</h5>
           </div>
           <div class="modal-body">
             <p>Marca: {{item.marca}}</p>
-            <p>Número de Serie: {{item.numeroSerie}}</p>
+            <p>Número de Serie: {{item.numSerie}}</p>
             <p>Costo:$ {{item.costo}}</p>
             <p>Sucursal: {{item.sucursal}}</p>
           <div class="modal-footer">
@@ -227,9 +227,9 @@ aria-labelledby="InventarioBuscadoModal" aria-hidden="true">
 
             <div class="md-form mb-5">
            <mdb-icon fas icon="signature" class="prefix white-text"></mdb-icon>
-           <input type="text" name="tipoEquipo" id="InputTipoEquipo" class="form-control white-text"
-                  mdbInput required="" ngModel="{{item.tipoEquipo}}">
-           <label for="InputTipoEquipo" class="white-text">Tipo de Equipo</label>
+           <input type="text" name="tipoMaquina" id="InputTipoEquipo" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.tipoMaquina}}">
+           <label for="InputTipoEquipo" class="white-text">Tipo Máquina</label>
          </div>
 
          <div class="md-form mb-5">
@@ -241,8 +241,8 @@ aria-labelledby="InventarioBuscadoModal" aria-hidden="true">
 
          <div class="md-form mb-5">
             <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-            <input type="text" name="numeroSerie" id="InputNumeroSerie" class="form-control white-text"
-                   mdbInput required="" ngModel="{{item.numeroSerie}}">
+            <input type="text" name="numSerie" id="InputNumeroSerie" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.numSerie}}">
             <label for="InputNumeroSerie" class="white-text">Número de Serie</label>
           </div>
 

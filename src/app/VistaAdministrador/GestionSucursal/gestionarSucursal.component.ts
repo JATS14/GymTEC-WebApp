@@ -15,7 +15,7 @@ import { NgForm } from '@angular/forms';
     res1: Array<any> = [{"nombre":"Sucursal1","direccion":"Cartago-Cartago-Guadalupe",
                             "fechaApertura":"10-500-2010","horarioAtencion":"6-18",
                             "empleadoAdmin":"JuanitoMora","capacidadMax":50,"numTelefono":85125548,
-                            "spa":"OFF","tienda":"OFF"}];
+                            "spa":"on","tienda":"off"}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];
@@ -136,7 +136,7 @@ import { NgForm } from '@angular/forms';
 
       goToCopiar(CopiarSucursal: NgForm){
         if (CopiarSucursal.valid) {
-        this.json.postJsonSucursaCopiar(CopiarSucursal.value).subscribe((resy: any) => {
+        this.json.postJsonSucursalAgregar(CopiarSucursal.value).subscribe((resy: any) => {
           console.log(resy);
           this.res5 = resy;
           if(resy.status == "exito"){

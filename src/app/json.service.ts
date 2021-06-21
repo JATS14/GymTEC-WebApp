@@ -46,7 +46,7 @@ export class JsonService{
     urlEditarTSucursal = '';
     urlONOFFSPASucursal = '';
     urlONOFFTiendaSucursal = '';
-    urlCopiarSucursal = '';
+    //urlCopiarSucursal = '';
 
     /* GESTION Servicio*/ 
     urlObtnerServicio = '';
@@ -92,8 +92,9 @@ export class JsonService{
       UrlObtenerSucursalActual = '';
       UrlObtenerClases = '';
       UrlEliminarClases = '';
-      UrlCopiarClases = '';
+      //UrlCopiarClases = '';
       UrlAgregarClases = '';
+      
       UrlAsociarSpa = '';
       UrlDesasociarSpa = '';
 
@@ -222,9 +223,9 @@ export class JsonService{
     postJsonSucursalONOFFTienda(obj: any){
       return this.http.post(this.urlONOFFTiendaSucursal, obj, this.httpOptions);
     }
-    postJsonSucursaCopiar(obj: any){
-      return this.http.post(this.urlCopiarSucursal, obj, this.httpOptions);
-    }
+    //postJsonSucursaCopiar(obj: any){
+    //  return this.http.post(this.urlCopiarSucursal, obj, this.httpOptions);
+    //}
 
     /* GESTION Servicio*/ 
     getJsonServicio(){
@@ -332,9 +333,9 @@ export class JsonService{
     postJsonEliminarClase( obj: any){
       return this.http.post(this.UrlEliminarClases, obj, this.httpOptions);
     }
-    postJsonCopiarClase( obj: any){
-      return this.http.post(this.UrlCopiarClases, obj, this.httpOptions);
-    }
+    //postJsonCopiarClase( obj: any){
+    //  return this.http.post(this.UrlCopiarClases, obj, this.httpOptions);
+    //}
     postJsonAgregarClase( obj: any){
       return this.http.post(this.UrlAgregarClases, obj, this.httpOptions);
     }

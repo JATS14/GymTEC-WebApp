@@ -12,8 +12,8 @@
     })
   
     export class GestionarTipoPlanilla{
-      res1: Array<any> = [{"identificador":"15242","descripcion":"Prubea 1",
-                            "pagoMensual":500,"pagoHoras":100,"pagoClase":20}];
+      res1: Array<any> = [{"id_TipoPlanilla":"15242","descripcion":"Prubea 1",
+                            "pagoMensual":500,"pagoXhora":100,"pagoXclase":20}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];
