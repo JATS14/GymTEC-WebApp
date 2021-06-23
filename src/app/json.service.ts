@@ -8,118 +8,133 @@ import { HttpHeaders } from '@angular/common/http';
 
 export class JsonService{
 
-    urlLogin = '';
-    urlRegistro = '';
+    urlLogin = 'https://localhost:5001/LogInRegister/verificar';
+    urlRegistro = 'https://localhost:5001/LogInRegister/registrar';
 
-    urlUsuarioActualGET= '';
-    urlUsuarioActualSET= '';
+    urlUsuarioActualGET= 'https://localhost:5001/GetListas/GetUsuarioActual';
 
-    urlRolActualGET = '';
-    urlRolActualSET = '';
+    urlRolActualGET = 'https://localhost:5001/GetListas/GetAdminActual';
 
     /* GESTION TRATAMIENTO SPA*/ 
-    urlObtnerSpas = '';
-    urlAgregarSpa = '';
-    urlBuscarSpa = '';
-    urlEliminarSpa = '';
-    urlEditarSpa = '';
+    urlObtnerSpas = 'https://localhost:5001/GetListas/GetSpa';
+    urlAgregarSpa = 'https://localhost:5001/TratamientoSpa/agregarSpa';
+    urlBuscarSpa = 'https://localhost:5001/TratamientoSpa/buscarSpa';
+    urlEliminarSpa = 'https://localhost:5001/TratamientoSpa/eliminarSpa';
+    urlEditarSpa = 'https://localhost:5001/TratamientoSpa/editarSpa';
 
     /* GESTION Tipo Planilla*/ 
-    urlObtnerTipoPlanilla = '';
-    urlAgregarTipoPlanilla = '';
-    urlBuscarTipoPlanilla = '';
-    urlEliminarTipoPlanilla = '';
-    urlEditarTipoPlanilla = '';
+    urlObtnerTipoPlanilla = 'https://localhost:5001/GetListas/GetTipoPlanilla';
+    urlAgregarTipoPlanilla = 'https://localhost:5001/TipoPlanilla/agregarTipoPlanilla';
+    urlBuscarTipoPlanilla = 'https://localhost:5001/TipoPlanilla/buscarTipoPlanilla';
+    urlEliminarTipoPlanilla = 'https://localhost:5001/TipoPlanilla/eliminarTipoPlanilla';
+    urlEditarTipoPlanilla = 'https://localhost:5001/TipoPlanilla/editarTipoPlanilla';
 
     /* GESTION Tipo Equipo*/ 
-    urlObtnerTipoEquipo = '';
-    urlAgregarTipoEquipo = '';
-    urlBuscarTipoEquipo = '';
-    urlEliminarTipoEquipo = '';
-    urlEditarTipoEquipo = '';
+    urlObtnerTipoEquipo = 'https://localhost:5001/GetListas/GetTipoEquipo';
+    urlAgregarTipoEquipo = 'https://localhost:5001/TipoEquipo/agregarTipoDeEquipo';
+    urlBuscarTipoEquipo = 'https://localhost:5001/TipoEquipo/buscarTipoDeEquipo';
+    urlEliminarTipoEquipo = 'https://localhost:5001/TipoEquipo/eliminarTipoDeEquipo';
+    urlEditarTipoEquipo = 'https://localhost:5001/TipoEquipo/editarTipoDeEquipo';
 
     /* GESTION Sucursal*/ 
-    urlObtnerSucursal = '';
-    urlAgregarSucursal = '';
-    urlBuscarSucursal = '';
-    urlEliminarSucursal = '';
-    urlEditarTSucursal = '';
-    urlONOFFSPASucursal = '';
-    urlONOFFTiendaSucursal = '';
+    urlObtnerSucursal = 'https://localhost:5001/GetListas/GetSucursal';
+    urlAgregarSucursal = 'https://localhost:5001/Sucursal/agregarSucursal';
+    urlBuscarSucursal = 'https://localhost:5001/Sucursal/buscarSucursal';
+    urlEliminarSucursal = 'https://localhost:5001/Sucursal/eliminarSucursal';
+    urlEditarTSucursal = 'https://localhost:5001/Sucursal/editarSucursal';
+    urlONOFFSPASucursal = 'https://localhost:5001/Sucursal/ONOFFSPA';
+    urlONOFFTiendaSucursal = 'https://localhost:5001/Sucursal/ONOFFTIENDA';
     //urlCopiarSucursal = '';
 
     /* GESTION Servicio*/ 
-    urlObtnerServicio = '';
-    urlAgregarServicio = '';
-    urlBuscarServicio = '';
-    urlEliminarServicio= '';
-    urlEditarServicio = '';
+    urlObtnerServicio = 'https://localhost:5001/GetListas/GetServicio';
+    urlAgregarServicio = 'https://localhost:5001/Servicio/agregarServicio';
+    urlBuscarServicio = 'https://localhost:5001/Servicio/buscarServicio';
+    urlEliminarServicio= 'https://localhost:5001/Servicio/eliminarServicio';
+    urlEditarServicio = 'https://localhost:5001/Servicio/editarServicio';
 
     /* GESTION Puesto*/ 
-    urlObtnerPuesto = '';
-    urlAgregarPuesto = '';
-    urlBuscarPuesto = '';
-    urlEliminarPuesto= '';
-    urlEditarPuesto = '';
+    urlObtnerPuesto = 'https://localhost:5001/GetListas/GetPuesto';
+    urlAgregarPuesto = 'https://localhost:5001/Puesto/agregarPuesto';
+    urlBuscarPuesto = 'https://localhost:5001/Puesto/buscarPuesto';
+    urlEliminarPuesto= 'https://localhost:5001/Puesto/eliminarPuesto';
+    urlEditarPuesto = 'https://localhost:5001/Puesto/editarPuesto';
 
     /* GESTION Producto*/ 
-    urlObtnerProducto = '';
-    urlAgregarProducto = '';
-    urlBuscarProducto = '';
-    urlEliminarProducto = '';
-    urlEditarProducto = '';
+    urlObtnerProducto = 'https://localhost:5001/GetListas/GetProductos';
+    urlAgregarProducto = 'https://localhost:5001/Producto/agregarProducto';
+    urlBuscarProducto = 'https://localhost:5001/Producto/buscarProducto';
+    urlEliminarProducto = 'https://localhost:5001/Producto/eliminarProducto';
+    urlEditarProducto = 'https://localhost:5001/Producto/editarProducto';
 
      /* GESTION Inventario*/ 
-     urlObtnerInventario = '';
-     urlAgregarInventario = '';
-     urlBuscarInventario = '';
-     urlEliminarInventario = '';
-     urlEditarInventario = '';
+     urlObtnerInventario = 'https://localhost:5001/GetListas/GetInventario';
+     urlAgregarInventario = 'https://localhost:5001/Inventario/agregarInventario';
+     urlBuscarInventario = 'https://localhost:5001/Inventario/buscarInventario';
+     urlEliminarInventario = 'https://localhost:5001/Inventario/eliminarInventario';
+     urlEditarInventario = 'https://localhost:5001/Inventario/editarInventario';
 
       /* GESTION Empleado*/ 
-      urlObtnerEmpleado = '';
-      urlAgregarEmpleado = '';
-      urlBuscarEmpleado= '';
-      urlEliminarEmpleado = '';
-      urlEditarEmpleado = '';
+      urlObtnerEmpleado = 'https://localhost:5001/GetListas/GetEmpleados';
+      urlAgregarEmpleado = 'https://localhost:5001/Empleado/agregarEmpleado';
+      urlBuscarEmpleado= 'https://localhost:5001/Empleado/buscarEmpleado';
+      urlEliminarEmpleado = 'https://localhost:5001/Empleado/eliminarEmpleado';
+      urlEditarEmpleado = 'https://localhost:5001/Empleado/editarEmpleado';
 
        /* Generar Planilla*/ 
-      urlGetPlanillaMensual = '';
-      urlGetPlanillaHoras = '';
-      urlGetPlanillaClase = '';
+      urlGetPlanillaMensual = 'https://localhost:5001/GenerarPlanilla/generarPlanillaMensual';
+      urlGetPlanillaHoras = 'https://localhost:5001/GenerarPlanilla/generarPlanillaHoras';
+      urlGetPlanillaClase = 'https://localhost:5001/GenerarPlanilla/generarPlanillaClases';
 
       /* Configurar Gimnasio*/ 
-      UrlObtenerSucursalActual = '';
-      UrlObtenerClases = '';
-      UrlEliminarClases = '';
+      UrlObtenerSucursalActual = 'https://localhost:5001/GetListas/GetSucursalActual';
+      UrlObtenerClases = 'https://localhost:5001/GetListas/GetClases';
+      UrlEliminarClases = 'https://localhost:5001/ConfiguracionGym/eliminarClases';
       //UrlCopiarClases = '';
-      UrlAgregarClases = '';
+      UrlAgregarClases = 'https://localhost:5001/ConfiguracionGym/agregarClases';
       
-      UrlAsociarSpa = '';
-      UrlDesasociarSpa = '';
+      UrlAsociarSpa = 'https://localhost:5001/ConfiguracionGym/AsociarSpa';
+      UrlDesasociarSpa = 'https://localhost:5001/ConfiguracionGym/DesasociarSpa';
 
-      UrlAsociarProducto = '';
-      UrlDesasociarProducto = '';
+      UrlAsociarProducto = 'https://localhost:5001/ConfiguracionGym/AsociarProducto';
+      UrlDesasociarProducto = 'https://localhost:5001/ConfiguracionGym/DesasociarProducto';
 
-      UrlAsociarInventario = '';
-      UrlDesasociarInventario = '';
+      UrlAsociarInventario = 'https://localhost:5001/ConfiguracionGym/AsociarInventario';
+      UrlDesasociarInventario = 'https://localhost:5001/ConfiguracionGym/DesasociarInventario';
 
-      UrlAsociarServicio = '';
-      UrlDesasociarServicio = '';
+      UrlAsociarServicio = 'https://localhost:5001/ConfiguracionGym/AsociarServicio';
+      UrlDesasociarServicio = 'https://localhost:5001/ConfiguracionGym/DesasociarServicio';
 
        /* Vista Usuario */ 
        
-       urlRegistrarseClase = '';
-       urlBuscarClaseUsuario = '';
+       urlRegistrarseClase = 'https://localhost:5001/VistaCliente/registrarseClases';
+       urlBuscarClaseUsuario = 'https://localhost:5001/ConfiguracionGym/buscarClases';
 
+       /* spa inventario servicio producto actual*/
+
+       urlSpaActual = 'https://localhost:5001/GetListas/GetSpaActual';
+       urlinventarioActual = 'https://localhost:5001/GetListas/GetInventarioActual';
+       urlproductoActual = 'https://localhost:5001/GetListas/GetProductosActual';
+       urlservicioActual = 'https://localhost:5001/GetListas/GetServicioActual';
+
+    //header = {headers: {'Access-Control-Allow-Origin': 'http://localhost:4200/', 'Access-Control-Allow-Methods': 'POST', 'Access-Control-Allow-Headers': 'Content-Type, Authorization'}};
+    
+   /* httpOptions = {
+      headers: new HttpHeaders ({
+        'Access-Control-Allow-Origin': 'http://localhost:5001/', 
+        'Access-Control-Allow-Methods': 'POST', 
+        'Access-Control-Allow-Headers': 'Content-Type' , 
+        Authorization: 'my-auth-token'
+      })
+    }; */
 
     httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type':  'application/json',
-          Authorization: 'my-auth-token'
-        })
-      };
-      
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': 'http://localhost:4200/',
+        'Content-Type':  'application/json',
+        Authorization: 'my-auth-token'
+      })
+    };
 
 
 
@@ -136,17 +151,9 @@ export class JsonService{
      getJsonUsuarioActual(){
       return this.http.get(this.urlUsuarioActualGET);
     }
-  
-    postJsonUsuarioActual( obj: any){
-      return this.http.post(this.urlUsuarioActualSET, obj, this.httpOptions);
-    }
 
     getJsonRolActual(){
       return this.http.get(this.urlRolActualGET);
-    }
-  
-    postJsonRolActual( obj: any){
-      return this.http.post(this.urlRolActualSET, obj, this.httpOptions);
     }
 
 
@@ -186,7 +193,7 @@ export class JsonService{
 
     /* GESTION Tipo Equipo*/ 
     getJsonTipoEquipo(){
-      return this.http.get(this.urlObtnerSucursal);
+      return this.http.get(this.urlObtnerTipoEquipo);
     }
      postJsonTipoEquipoAgregar( obj: any){
       return this.http.post(this.urlAgregarTipoEquipo, obj, this.httpOptions);
@@ -203,7 +210,8 @@ export class JsonService{
 
     /* GESTION Sucursal*/ 
     getJsonSucursal(){
-      return this.http.get(this.urlObtnerTipoEquipo);
+      return this.http.get(this.urlObtnerSucursal);
+      
     }
     postJsonSucursalAgregar( obj: any){
       return this.http.post(this.urlAgregarSucursal, obj, this.httpOptions);
@@ -376,4 +384,18 @@ export class JsonService{
     postJsonBuscarClaseUsuario( obj: any){
       return this.http.post(this.urlBuscarClaseUsuario, obj, this.httpOptions);
     }
-}
+
+    /* spa inventario servicio producto actual*/
+    getJsonspaActual(){
+      return this.http.get(this.urlSpaActual);
+    }
+    getJsoninventarioActual(){
+      return this.http.get(this.urlinventarioActual);
+    }
+    getJsonproductoActual(){
+      return this.http.get(this.urlproductoActual);
+    }
+    getJsonservicioActual(){
+      return this.http.get(this.urlservicioActual);
+    }
+};

@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
   })
 
   export class GestionarServicios{
-    res1: Array<any> = [{"nombre_servicio":"servicio1","descripcion":"Descripcion 1"}];
+    res1: Array<any> = [{"idServicio":4857,"nombre_servicio":"servicio1","descripcion":"Descripcion 1"}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];
@@ -22,10 +22,10 @@ import { NgForm } from '@angular/forms';
       frameEditarAbrir : boolean = false;
     constructor(
         private router: Router, public json: JsonService) {
-        /* this.json.getJsonServicio().subscribe((res: any) => {
+         this.json.getJsonServicio().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
       }
 
       enviarAEditar(editar: any){

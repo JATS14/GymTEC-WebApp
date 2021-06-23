@@ -75,10 +75,16 @@
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-           <input type="text" name="id_puesto" id="InputIdentificador" class="form-control white-text"
+           <input type="text" name="idPuesto" id="InputIdentificador" class="form-control white-text"
                   mdbInput required="" ngModel>
            <label for="InputIdentificador" class="white-text">identificador</label>
          </div>
+         <div class="md-form mb-5">
+          <mdb-icon fas icon="signature" class="prefix white-text"></mdb-icon>
+          <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
+                 mdbInput required="" ngModel>
+          <label for="InputNombre" class="white-text">Nombre</label>
+        </div>
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="align-justify" class="prefix white-text"></mdb-icon>
@@ -145,7 +151,9 @@ aria-labelledby="PuestoBuscadoModal" aria-hidden="true">
    <div class="container">
      <div class="col align-self-start">
            
-           <p> {{item.id_puesto}}</p>
+           <p> {{item.idPuesto}}</p>
+           
+           <p> Nombre: {{item.nombre}}</p>
            <p> Descripción: {{item.descripcion}}</p>
            <p> --------------------------</p>
        </div>
@@ -163,9 +171,10 @@ aria-labelledby="PuestoBuscadoModal" aria-hidden="true">
         <div class="modal-content">
           
           <div class="modal-header">
-            <h5 class="modal-title">{{item.id_puesto}}</h5>
+            <h5 class="modal-title">{{item.idPuesto}}</h5>
           </div>
           <div class="modal-body">
+            <p> Nombre: {{item.nombre}}</p>
             <p> Descripción: {{item.descripcion}}</p>
           </div>
           <div class="modal-footer">
@@ -196,11 +205,16 @@ aria-labelledby="PuestoBuscadoModal" aria-hidden="true">
 
             <div class="md-form mb-5">
                 <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-                <input type="text" name="id_puesto" id="InputIdentificador" class="form-control white-text"
-                       mdbInput required="" ngModel="{{item.id_puesto}}">
+                <input type="text" name="idPuesto" id="InputIdentificador" class="form-control white-text"
+                       mdbInput required="" ngModel="{{item.idPuesto}}">
                 <label for="InputIdentificador" class="white-text">identificador</label>
               </div>
-     
+              <div class="md-form mb-5">
+                <mdb-icon fas icon="signature" class="prefix white-text"></mdb-icon>
+                <input type="text" name="nombre" id="InputNombre" class="form-control white-text"
+                       mdbInput required="" ngModel="{{item.nombre}}">
+                <label for="InputNombre" class="white-text">Nombre</label>
+              </div>
               <div class="md-form mb-5">
                 <mdb-icon fas icon="align-justify" class="prefix white-text"></mdb-icon>
                 <input type="text" name="descripcion" id="InputDescripcion" class="form-control white-text"

@@ -30,43 +30,43 @@ import { NgForm } from '@angular/forms';
 
     constructor(
         private router: Router, public json: JsonService) {
-        /* this.json.getJsonSucursal().subscribe((res: any) => {
+         this.json.getJsonSucursal().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
       }
 
       planillaMensual(Sucursal: any){
         this.PlanillaMensual = [Sucursal];
         this.framePlanillaMensual = true;
-        /*this.json.postJsonPlanillaMensual(Sucursal).subscribe((resy: any) => {
+        this.json.postJsonPlanillaMensual(Sucursal).subscribe((resy: any) => {
           console.log(resy);
           this.resMensual = resy;
-        });*/
-        this.resMensual= [{"nombre":"Adrian","numeroCedula":514542,"monto":1000},
-                        {"nombre":"Steph","numeroCedula":87855,"monto":2000}];
+        });
+        //this.resMensual= [{"nombre":"Adrian","numeroCedula":514542,"monto":1000},
+        //                {"nombre":"Steph","numeroCedula":87855,"monto":2000}];
       }
       planillaHora(Sucursal: any){
         this.PlanillaHora = [Sucursal];
         this.framePlanillaHora = true;
-        /*this.json.postJsonPlanillaHoras(Sucursal).subscribe((resy: any) => {
+        this.json.postJsonPlanillaHoras(Sucursal).subscribe((resy: any) => {
           console.log(resy);
           this.resHora = resy;
-        });*/
-        this.resHora = [{"nombre":"Adrian","numeroCedula":514542,"horas":6,"monto":1000},
-                        {"nombre":"Steph","numeroCedula":87855,"horas":10,"monto":2000}];
+        });
+        //this.resHora = [{"nombre":"Adrian","numeroCedula":514542,"horas":6,"monto":1000},
+        //               {"nombre":"Steph","numeroCedula":87855,"horas":10,"monto":2000}];
       }
       planillaClase(Sucursal: any){
         this.PlanillaClase = [Sucursal];
         this.framePlanillaClase = true;
-        /*
+        
         this.json.postJsonPlanillaClase(Sucursal).subscribe((resy: any) => {
           console.log(resy);
           this.resClase = resy;
         });
-        */
-        this.resClase = [{"nombre":"Adrian","numeroCedula":514542,"clases":6,"monto":1000},
-                        {"nombre":"Steph","numeroCedula":87855,"clases":10,"monto":2000}];
+        
+        //this.resClase = [{"nombre":"Adrian","numeroCedula":514542,"clases":6,"monto":1000},
+        //                {"nombre":"Steph","numeroCedula":87855,"clases":10,"monto":2000}];
       }
       planillaMensualClose(estado : boolean){
         this.framePlanillaMensual = estado;

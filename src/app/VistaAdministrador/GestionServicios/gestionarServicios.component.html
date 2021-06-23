@@ -74,9 +74,16 @@
        <div class="modal-body mx-3">
          <form #AgrgarServicio = "ngForm" (ngSubmit)="goTo(AgrgarServicio)">
 
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+            <input type="text" name="idServicio" id="InputIdentificador" class="form-control white-text"
+                   mdbInput required="" ngModel>
+            <label for="InputIdentificador" class="white-text">identificador</label>
+          </div>
+
          <div class="md-form mb-5">
-           <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-           <input type="text" name="nombre_servicio" id="InputIdentificador" class="form-control white-text"
+           <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
+           <input type="text" name="nombreServicio" id="InputIdentificador" class="form-control white-text"
                   mdbInput required="" ngModel>
            <label for="InputIdentificador" class="white-text">Nombre Servicio</label>
          </div>
@@ -146,8 +153,8 @@ aria-labelledby="ServicioBuscadoModal" aria-hidden="true">
  <div *ngFor="let item of res4; let i = index" >
    <div class="container">
      <div class="col align-self-start">
-           
-           <p> {{item.nombre_servicio}}</p>
+      <p> {{item.idServicio}}</p>
+           <p> {{item.nombreServicio}}</p>
            <p> Descripción: {{item.descripcion}}</p>
            <p> --------------------------</p>
        </div>
@@ -165,9 +172,10 @@ aria-labelledby="ServicioBuscadoModal" aria-hidden="true">
         <div class="modal-content">
           
           <div class="modal-header">
-            <h5 class="modal-title">{{item.nombre_servicio}}</h5>
+            <h5 class="modal-title">{{item.nombreServicio}}</h5>
           </div>
           <div class="modal-body">
+            <p> idServicio: {{item.idServicio}}</p>
          <p> Descripción: {{item.descripcion}}</p>
           </div>
           <div class="modal-footer">
@@ -196,10 +204,17 @@ aria-labelledby="ServicioBuscadoModal" aria-hidden="true">
 
          <form #EditarServicioEditado = "ngForm" (ngSubmit)="goToEditar(EditarServicioEditado)">
 
+          <div class="md-form mb-5">
+            <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
+            <input type="text" name="idServicio" id="InputIdentificador" class="form-control white-text"
+                   mdbInput required="" ngModel="{{item.idServicio}}">
+            <label for="InputIdentificador" class="white-text">idServicio</label>
+          </div>
+
             <div class="md-form mb-5">
-                <mdb-icon fas icon="fingerprint" class="prefix white-text"></mdb-icon>
-                <input type="text" name="nombre_servicio" id="InputIdentificador" class="form-control white-text"
-                       mdbInput required="" ngModel="{{item.nombre_servicio}}">
+                <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
+                <input type="text" name="nombreServicio" id="InputIdentificador" class="form-control white-text"
+                       mdbInput required="" ngModel="{{item.nombreServicio}}">
                 <label for="InputIdentificador" class="white-text">Identificador</label>
               </div>
      

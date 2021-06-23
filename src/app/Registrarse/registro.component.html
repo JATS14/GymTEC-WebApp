@@ -4,17 +4,21 @@
         <form #formregister = "ngForm" (ngSubmit)="goToRegister(formregister)">
 
           <div class="row">
-            <label>Nombre Completo:</label>
-            <input type="text" name="nombre" class="normal" id="InputNombre" required="" ngModel>
-          </div>
-          <div class="row">
             <label>Número de Cédula:</label>
             <input type="text" name="numCedula" class="normal" id="InputNumCedula" required="" ngModel>
+          </div>
+          <div class="row">
+            <label>Nombre Completo:</label>
+            <input type="text" name="nombre" class="normal" id="InputNombre" required="" ngModel>
           </div>
           <div class="row">
             <label>Edad:</label>
             <input type="text" name="edad" class="normal" id="InputEdad" required=""ngModel>
           </div>
+        <div class="row">
+          <label>Fecha Nacimiento:</label>
+          <input type="text" name="fechaNacimiento" class="normal" id="InputEdad" required=""ngModel>
+        </div>
           <div class="row">
             <label>Peso:</label>
             <input type="text" name="peso" class="normal" id="InputPeso" required="" ngModel>
@@ -33,7 +37,7 @@
           </div>
           <div class="row">
             <label>Contraseña:</label>
-            <input type="password" name="contrasena" class="normal" id="InputPassword" required="" ngModel>
+            <input type="password" name="password" class="normal" id="InputPassword" required="" ngModel>
           </div>
 
           <div class="row" class = "button">

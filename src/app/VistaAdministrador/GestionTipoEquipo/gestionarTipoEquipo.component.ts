@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
   })
 
   export class GestionarTipoEquipo{
-      res1: Array<any> = [{"id_tipoEquipo":"15242","descripcion":"Prubea 1"}];
+      res1: Array<any> = [{"id_tipoEquipo":"15242","nombreTipoEquipo":"Nombre1","descripcion":"Prubea 1"}];
       res2: Array<any> = [];
       res3: Array<any> = [];
       res4: Array<any> = [];
@@ -23,10 +23,10 @@ import { NgForm } from '@angular/forms';
     constructor(
         private router: Router, public json: JsonService) {
 
-        /* this.json.getJsonTipoEquipo().subscribe((res: any) => {
+         this.json.getJsonTipoEquipo().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
       }
 
       enviarAEditar(editar: any){

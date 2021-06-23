@@ -51,7 +51,7 @@ import { NgForm } from '@angular/forms';
 
     constructor(
         private router: Router, public json: JsonService) {
-          /* this.json.getJsonSucursalActual().subscribe((res: any) => {
+           this.json.getJsonSucursalActual().subscribe((res: any) => {
             console.log(res);
             this.SucursalActual = res;
           });
@@ -75,12 +75,28 @@ import { NgForm } from '@angular/forms';
             console.log(res);
             this.ListaClases = res;
           });
-          */
-      }
 
+          this.json.getJsonspaActual().subscribe((res: any) => {
+            console.log(res);
+            this.TratamientoActual = res;
+          });
+          this.json.getJsoninventarioActual().subscribe((res: any) => {
+            console.log(res);
+            this.InventarioActual = res;
+          });
+          this.json.getJsonproductoActual().subscribe((res: any) => {
+            console.log(res);
+            this.ProductosActual = res;
+          });
+          this.json.getJsonservicioActual().subscribe((res: any) => {
+            console.log(res);
+            this.ServicioActual = res;
+          });
+          
+      }
       
       Eliminar_Clase(object: any): void{
-        this.json.postJsonSucursalEliminar(object).subscribe((resX: any) => {
+        this.json.postJsonEliminarClase(object).subscribe((resX: any) => {
           console.log(resX);
           this.res2 = resX;
           if(resX.status == "exito"){
@@ -92,7 +108,7 @@ import { NgForm } from '@angular/forms';
 
       goTo(AgrgarClase: NgForm) {
         if (AgrgarClase.valid) {
-          this.json.postJsonSucursalAgregar(AgrgarClase.value).subscribe((res: any) => {
+          this.json.postJsonAgregarClase(AgrgarClase.value).subscribe((res: any) => {
             console.log(res);
             this.res3 = res; 
             if(res.status == "agregado"){
@@ -116,10 +132,10 @@ import { NgForm } from '@angular/forms';
 
       goToCopiar(CopiarClase: NgForm){
         if (CopiarClase.valid) {
-        this.json.postJsonSucursalAgregar(CopiarClase.value).subscribe((resy: any) => {
+        this.json.postJsonAgregarClase(CopiarClase.value).subscribe((resy: any) => {
           console.log(resy);
           this.res4 = resy;
-          if(resy.status == "exito"){
+          if(resy.status == "agregado"){
             this.frameCopiarAbrir = false;
             window.location.reload();
             alert('Se Copio Clase con éxito');
@@ -134,7 +150,6 @@ import { NgForm } from '@angular/forms';
       AsocicarSpa(object: any): void{
         this.json.postJsonAsociarSpa(object).subscribe((resX: any) => {
           console.log(resX);
-          this.dummy = resX;
           if(resX.status == "exito"){
             window.location.reload();
           }
@@ -143,7 +158,6 @@ import { NgForm } from '@angular/forms';
       DesasocicarSpa(object: any): void{
         this.json.postJsonDesasociarSpa(object).subscribe((resX: any) => {
           console.log(resX);
-          this.dummy = resX;
           if(resX.status == "exito"){
             window.location.reload();
           }

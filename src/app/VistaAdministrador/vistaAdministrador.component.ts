@@ -15,10 +15,10 @@ import { NgForm } from '@angular/forms';
     constructor(
         private router: Router, public json: JsonService
       ) {
-        /* this.json.getJsonRolActual().subscribe((res: any) => {
+         this.json.getJsonRolActual().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
       }
 
 

@@ -96,13 +96,13 @@
                 <tr *ngFor=" let spasAso of TratamientoActual" >
                     <td> {{spasAso.nombre}}</td>
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
-                            <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "DesasocicarSpa(spasAso)" mdbWavesEffect>
+                            <mdb-icon fas icon="angle-double-right" class= "prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
                   </tr>
                 <tr *ngFor="let spas of ListaTratamientos" >
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "AsocicarSpa(spas)" mdbWavesEffect>
                             <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
                   <td>{{spas.nombre}}</td>
@@ -142,13 +142,13 @@
                 <tr *ngFor=" let producAso of ProductosActual" >
                     <td> {{producAso.nombre}}</td>
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "DesasocicarProducto(producAso)" mdbWavesEffect>
                             <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
                   </tr>
                 <tr *ngFor="let producto of ListaProductos" >
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "AsocicarProducto(producto)" mdbWavesEffect>
                             <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
                   <td>{{producto.nombre}}</td>
@@ -186,18 +186,18 @@
             
             <tbody>
                 <tr *ngFor=" let inventAso of InventarioActual" >
-                    <td> {{inventAso.tipoEquipo}}</td>
+                    <td> {{inventAso.tipoMaquina}}</td>
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "DesasocicarInventario(inventAso)" mdbWavesEffect>
                             <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
                   </tr>
                 <tr *ngFor="let inventa of ListaInventario" >
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "AsocicarInventario(inventa)" mdbWavesEffect>
                             <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
-                  <td>{{inventa.tipoEquipo}}</td>
+                  <td>{{inventa.tipoMaquina}}</td>
                 </tr>
             </tbody>
           </table>
@@ -232,18 +232,18 @@
             
             <tbody>
                 <tr *ngFor=" let ServAso of ServicioActual" >
-                    <td> {{ServAso.identificador}}</td>
+                    <td> {{ServAso.nombreServicio}}</td>
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "DesasocicarServicio(ServAso)" mdbWavesEffect>
                             <mdb-icon fas icon="angle-double-right" class="prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
                   </tr>
                 <tr *ngFor="let servicios of ListaServicios" >
                     <td><div class="row" class = "button">
-                        <button mdbBtn type="button" color="blue-grey" mdbWavesEffect>
+                        <button mdbBtn type="button" color="blue-grey" (click) = "AsocicarServicio(servicios)" mdbWavesEffect>
                             <mdb-icon fas icon="angle-double-left" class="prefix white-text"></mdb-icon> Pasar</button>
                         </div></td>
-                  <td>{{servicios.identificador}}</td>
+                  <td>{{servicios.nombreServicio}}</td>
                 </tr>
             </tbody>
           </table>

@@ -76,16 +76,16 @@
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="spa" class="prefix white-text"></mdb-icon>
-           <input type="text" name="id_spa" id="InputNombre" class="form-control white-text"
+           <input type="text" name="idSpa" id="InputNombre" class="form-control white-text"
                required="" ngModel mdbInput>
-           <label for="InputNombre" class="white-text">Nombre</label>
+           <label for="InputNombre" class="white-text">id Spa</label>
          </div>
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-           <input type="text" name="id_spa" id="Inputid_spa" class="form-control white-text"
+           <input type="text" name="nombre" id="Inputid_spa" class="form-control white-text"
                   mdbInput required="" ngModel>
-           <label for="Inputid_spa" class="white-text">Identificador</label>
+           <label for="Inputid_spa" class="white-text">nombre</label>
          </div>
 
          <div class="row" class = "button">
@@ -147,7 +147,7 @@ aria-labelledby="SpaBuscadoModal" aria-hidden="true">
      <div class="col align-self-start">
            
            <p> {{item.nombre}}</p>
-           <p>Identificador: {{item.id_spa}}</p>
+           <p>Identificador: {{item.idSpa}}</p>
            <p> --------------------------</p>
        </div>
      </div>
@@ -168,7 +168,7 @@ aria-labelledby="SpaBuscadoModal" aria-hidden="true">
             <h5 class="modal-title">{{item.nombre}}</h5>
           </div>
           <div class="modal-body">
-            <p>Identificador: {{item.id_spa}}</p>
+            <p>Identificador: {{item.idSpa}}</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn elegant" (click) = "enviarAEditar(item)" >Editar </button>
@@ -195,19 +195,18 @@ aria-labelledby="SpaBuscadoModal" aria-hidden="true">
                 <div *ngFor="let item of SpaEditando; let i = index" >
 
                 <form #EditarSpaEditado = "ngForm" (ngSubmit)="goToEditar(EditarSpaEditado)">
-    
+                  <div class="md-form mb-5">
+                    <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
+                    <input type="text" name="idSpa" id="InputIdentificador" class="form-control white-text"
+                           mdbInput required="" ngModel="{{item.idSpa}}">
+                    <label for="InputIdentificador" class="white-text">Identificador</label>
+                  </div>
+
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="spa" class="prefix white-text"></mdb-icon>
-                  <input type="text" name="nombreEditar" id="InputNombre" class="form-control white-text"
+                  <input type="text" name="Nombre" id="InputNombre" class="form-control white-text"
                         mdbInput required="" ngModel="{{item.nombre}}">
                   <label for="InputNombreEditar" class="white-text">Nombre</label>
-                </div>
-                
-                <div class="md-form mb-5">
-                  <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-                  <input type="text" name="id_spa" id="InputIdentificador" class="form-control white-text"
-                         mdbInput required="" ngModel="{{item.id_spa}}">
-                  <label for="InputIdentificador" class="white-text">Identificador</label>
                 </div>
   
                 <div class="row" class = "button">

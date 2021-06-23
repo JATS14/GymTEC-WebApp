@@ -75,10 +75,17 @@
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-           <input type="text" name="id_tipoEquipo" id="InputIdentificador" class="form-control white-text"
+           <input type="text" name="idTipoEquipo" id="InputIdentificador" class="form-control white-text"
                   mdbInput required="" ngModel>
            <label for="InputIdentificador" class="white-text">Identificador</label>
          </div>
+
+         <div class="md-form mb-5">
+          <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
+          <input type="text" name="nombreTipoEquipo" id="Inputnombre" class="form-control white-text"
+                 mdbInput required="" ngModel>
+          <label for="Inputnombre" class="white-text">Nombre Tipo de Equipo</label>
+        </div>
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="sort-alpha-up" class="prefix white-text"></mdb-icon>
@@ -145,7 +152,8 @@ aria-labelledby="TipoEquipoBuscadoLabel" aria-hidden="true">
    <div class="container">
      <div class="col align-self-start">
            
-           <p> {{item.id_tipoEquipo}}</p>
+           <p> {{item.idTipoEquipo}}</p>
+           <p> Nombre: {{item.nombreTipoEquipo}}</p>
            <p> Descripción: {{item.descripcion}}</p>
            <p> --------------------------</p>
        </div>
@@ -163,9 +171,10 @@ aria-labelledby="TipoEquipoBuscadoLabel" aria-hidden="true">
         <div class="modal-content">
           
           <div class="modal-header">
-            <h5 class="modal-title">{{item.id_tipoEquipo}}</h5>
+            <h5 class="modal-title">{{item.idTipoEquipo}}</h5>
           </div>
           <div class="modal-body">
+            <p> Nombre: {{item.nombreTipoEquipo}}</p>
             <p> Descripción: {{item.descripcion}}</p>
           </div>
           <div class="modal-footer">
@@ -196,10 +205,17 @@ aria-labelledby="TipoEquipoBuscadoLabel" aria-hidden="true">
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-           <input type="text" name="identificador" id="InputIdentificador" class="form-control white-text"
-                  mdbInput required="" ngModel="{{item.id_tipoEquipo}}">
+           <input type="text" name="idTipoEquipo" id="InputIdentificador" class="form-control white-text"
+                  mdbInput required="" ngModel="{{item.idTipoEquipo}}">
            <label for="InputIdentificador" class="white-text">Identificador</label>
          </div>
+
+         <div class="md-form mb-5">
+          <mdb-icon fas icon="user-alt" class="prefix white-text"></mdb-icon>
+          <input type="text" name="nombreTipoEquipo" id="InputIdentificador" class="form-control white-text"
+                 mdbInput required="" ngModel="{{item.nombreTipoEquipo}}">
+          <label for="InputIdentificador" class="white-text">Nombre Tipo de Equipo</label>
+        </div>
          
          <div class="md-form mb-5">
            <mdb-icon fas icon="sort-alpha-up" class="prefix white-text"></mdb-icon>

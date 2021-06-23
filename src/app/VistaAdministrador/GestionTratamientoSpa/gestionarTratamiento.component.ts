@@ -23,10 +23,10 @@ import { NgForm } from '@angular/forms';
 
     constructor(
         private router: Router, public json: JsonService) {
-         /* this.json.getJsonSpa().subscribe((res: any) => {
+          this.json.getJsonSpa().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
       }
       enviarAEditar(editar: any){
         this.SpaEditando = [editar];

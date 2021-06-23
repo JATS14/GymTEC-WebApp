@@ -26,10 +26,10 @@
       constructor(
           private router: Router, public json: JsonService) {
 
-          /* this.json.getJsonTipoPlanilla().subscribe((res: any) => {
+           this.json.getJsonTipoPlanilla().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
 
         }
   

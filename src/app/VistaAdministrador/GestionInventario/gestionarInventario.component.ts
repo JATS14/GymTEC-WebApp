@@ -25,10 +25,10 @@ import { NgForm } from '@angular/forms';
 
     constructor(
         private router: Router, public json: JsonService) {
-        /* this.json.getJsonInventario().subscribe((res: any) => {
+         this.json.getJsonInventario().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
       }
 
       enviarAEditar(editar: any){

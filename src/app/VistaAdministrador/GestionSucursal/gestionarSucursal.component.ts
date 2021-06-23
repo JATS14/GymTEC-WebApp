@@ -33,10 +33,10 @@ import { NgForm } from '@angular/forms';
 
     constructor(
         private router: Router, public json: JsonService) {
-        /* this.json.getJsonSucursal().subscribe((res: any) => {
+         this.json.getJsonSucursal().subscribe((res: any) => {
             console.log(res);
             this.res1 = res;
-          });*/
+          });
       }
 
       enviarAEditar(editar: any){
@@ -139,7 +139,7 @@ import { NgForm } from '@angular/forms';
         this.json.postJsonSucursalAgregar(CopiarSucursal.value).subscribe((resy: any) => {
           console.log(resy);
           this.res5 = resy;
-          if(resy.status == "exito"){
+          if(resy.status == "agregado"){
             this.frameEditarAbrir = false;
             window.location.reload();
             alert('Se Copió Sucursal con éxito');

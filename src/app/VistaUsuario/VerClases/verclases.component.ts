@@ -17,11 +17,11 @@ import { NgForm } from '@angular/forms';
                                "fecha":"06-18-2021","horaInicio":"18:52","horaFin":"19:50"}];
     constructor(
         private router: Router, public json: JsonService) {
-         /* this.json.getJsonClases().subscribe((res: any) => {
+          this.json.getJsonClases().subscribe((res: any) => {
             console.log(res);
             this.ListaClases = res;
           });
-          */
+          
       }
 
       Registrarse(object: any): void{

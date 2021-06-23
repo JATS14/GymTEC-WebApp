@@ -75,7 +75,7 @@
 
          <div class="md-form mb-5">
            <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-           <input type="text" name="id_TipoPlanilla" id="Inputid_TipoPlanilla" class="form-control white-text"
+           <input type="text" name="idTipoPlanilla" id="Inputid_TipoPlanilla" class="form-control white-text"
                   mdbInput required="" ngModel>
            <label for="Inputid_TipoPlanilla" class="white-text">Identificador</label>
          </div>
@@ -169,7 +169,7 @@ aria-labelledby="TipoPlantillaBuscadoModal" aria-hidden="true">
    <div class="container">
      <div class="col align-self-start">
            
-           <p> {{item.id_TipoPlanilla}}</p>
+           <p> {{item.idTipoPlanilla}}</p>
            <p> Descripción: {{item.descripcion}}</p>
            <p>Pago Por Mes: {{item.pagoMensual}}</p>
            <p>Pago por Hora: {{item.pagoXhora}}</p>
@@ -190,7 +190,7 @@ aria-labelledby="TipoPlantillaBuscadoModal" aria-hidden="true">
         <div class="modal-content">
           
           <div class="modal-header">
-            <h5 class="modal-title">{{item.id_TipoPlanilla}}</h5>
+            <h5 class="modal-title">{{item.idTipoPlanilla}}</h5>
           </div>
           <div class="modal-body">
             <p> Descripción: {{item.descripcion}}</p>
@@ -226,8 +226,8 @@ aria-labelledby="TipoPlantillaBuscadoModal" aria-hidden="true">
     
                 <div class="md-form mb-5">
                   <mdb-icon fas icon="barcode" class="prefix white-text"></mdb-icon>
-                  <input type="text" name="id_TipoPlanilla" id="InputIdentificador" class="form-control white-text"
-                         mdbInput required="" ngModel="{{item.id_TipoPlanilla}}">
+                  <input type="text" name="idTipoPlanilla" id="InputIdentificador" class="form-control white-text"
+                         mdbInput required="" ngModel="{{item.idTipoPlanilla}}">
                   <label for="InputIdentificador" class="white-text">Identificador</label>
                 </div>
                 
